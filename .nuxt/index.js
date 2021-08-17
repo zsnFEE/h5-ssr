@@ -13,11 +13,11 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_b2caf4ae from 'nuxt_plugin_plugin_b2caf4ae' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_15132168 from 'nuxt_plugin_axios_15132168' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_router_6da405e3 from 'nuxt_plugin_router_6da405e3' // Source: .\\router.js (mode: 'all')
-import nuxt_plugin_vant_925e8cb6 from 'nuxt_plugin_vant_925e8cb6' // Source: ..\\src\\plugins\\vant (mode: 'all')
-import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ..\\src\\plugins\\element-ui (mode: 'all')
+import nuxt_plugin_plugin_2adfd4d2 from 'nuxt_plugin_plugin_2adfd4d2' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_axios_e3e5aa30 from 'nuxt_plugin_axios_e3e5aa30' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_router_30368472 from 'nuxt_plugin_router_30368472' // Source: ./router.js (mode: 'all')
+import nuxt_plugin_vant_925e8cb6 from 'nuxt_plugin_vant_925e8cb6' // Source: ../src/plugins/vant (mode: 'all')
+import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ../src/plugins/element-ui (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -214,16 +214,16 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_b2caf4ae === 'function') {
-    await nuxt_plugin_plugin_b2caf4ae(app.context, inject)
+  if (typeof nuxt_plugin_plugin_2adfd4d2 === 'function') {
+    await nuxt_plugin_plugin_2adfd4d2(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_15132168 === 'function') {
-    await nuxt_plugin_axios_15132168(app.context, inject)
+  if (typeof nuxt_plugin_axios_e3e5aa30 === 'function') {
+    await nuxt_plugin_axios_e3e5aa30(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_router_6da405e3 === 'function') {
-    await nuxt_plugin_router_6da405e3(app.context, inject)
+  if (typeof nuxt_plugin_router_30368472 === 'function') {
+    await nuxt_plugin_router_30368472(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vant_925e8cb6 === 'function') {

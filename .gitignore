@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+.nuxt
 /dist/
 
 /tests/e2e/videos/
@@ -17,6 +18,7 @@ yarn-error.log*
 # Editor directories and files
 .idea
 .vscode
+.nuxt
 *.suo
 *.ntvs*
 *.njsproj

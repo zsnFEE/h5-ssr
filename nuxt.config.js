@@ -1,3 +1,5 @@
+const path = require("path"); // 需要引入
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -45,6 +47,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     vendor: ["element-ui"],
+    extractCSS: { allChunks: true },
     babel: {
       plugins: [
         [

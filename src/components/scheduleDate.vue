@@ -218,7 +218,6 @@
 <script>
 import { DatetimePicker, Popup, Picker } from "vant";
 import { sendMessage } from "../api/client";
-
 import {
   getScheduleCalendar,
   studentPlanSchedule,
@@ -293,13 +292,15 @@ export default {
     }
   },
   created() {
-    let that = this;
-    dsBridge.registerAsyn("RefreshData", function(arg1, arg2, arg3) {
-      that.refresh();
-    });
-    window["recvMessage"] = msg => {
-      this.refresh();
-    };
+    if (process.browser) {
+      let that = this;
+      dsBridge.registerAsyn("RefreshData", function(arg1, arg2, arg3) {
+        that.refresh();
+      });
+      window["recvMessage"] = msg => {
+        this.refresh();
+      };
+    }
   },
   mounted() {
     this.gettoday();
