@@ -6,6 +6,7 @@ import standardCurriculumListPhone from "./views/phone/standardCurriculumListPho
 import curriculumList from "./views/pc/curriculumList.vue";
 import secondList from "./views/list/secondList.vue";
 import Studentschedules from "./views/pc/Studentschedules.vue";
+import myInfoPhone from "./views/phone/myInfoPhone.vue";
 import pcLogin from "./views/pc/Login.vue";
 
 Vue.use(VueRouter);
@@ -47,6 +48,13 @@ const loginMap = [
     path: "/pc/Login",
     name: "pcLogin",
     component: pcLogin
+  }
+];
+const phoneMap = [
+  {
+    path: "/phone/myInfoPhone",
+    name: "myInfoPhone",
+    component: myInfoPhone
   }
 ];
 
@@ -3095,7 +3103,8 @@ export function createRouter() {
       // ...currRouterMap,
       // ...ipadFromRouterMap,
       // ...homeRouterMap,
-      ...listRouterMap
+      ...listRouterMap,
+      ...phoneMap
       // ...courseRouterMap,
       // ...myRouterMap,
       // ...setRouterMap,
@@ -3110,6 +3119,7 @@ export function createRouter() {
       // ...redeemRouterMap
     ]
   });
+  Vue.$router = router;
 
   return router;
 }

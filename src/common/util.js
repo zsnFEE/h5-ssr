@@ -25,18 +25,20 @@ export const isMac = () => {
 };
 
 export const isDevice = () => {
-  let bd_env = "";
-  var name = "bd_env";
-  var cookies = document.cookie.split(";");
-  for (let i = 0; i < cookies.length; i++) {
-    let cookie = cookies[i].trim();
-    // 判断这个cookie的参数名是不是我们想要的
-    if (cookie.substring(0, name.length + 1) === name + "=") {
-      bd_env = decodeURIComponent(cookie.substring(name.length + 1));
-      break;
+  if (process.browser) {
+    let bd_env = "";
+    var name = "bd_env";
+    var cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim();
+      // 判断这个cookie的参数名是不是我们想要的
+      if (cookie.substring(0, name.length + 1) === name + "=") {
+        bd_env = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
     }
+    return bd_env;
   }
-  return bd_env;
 };
 
 //转换base64
