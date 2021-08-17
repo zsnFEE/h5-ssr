@@ -35,11 +35,7 @@ export default {
   buildModules: ["@nuxtjs/router"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
-    "@nuxtjs/router"
-  ],
+  modules: ["@nuxtjs/axios", "@nuxtjs/router"],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
@@ -47,7 +43,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     vendor: ["element-ui"],
-    extractCSS: { allChunks: true },
+    extractCSS: true,
     babel: {
       plugins: [
         [

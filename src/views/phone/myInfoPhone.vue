@@ -1,9 +1,10 @@
 <template>
   <div class="myInfo">
-    <!-- <div class="backgroundColor"></div> -->
-    <img src="../../assets/img/bg_myinfo.png" alt="" class="backgroundImg" />
-    <body>
-      <!-- <div class="middle">
+    <client-only>
+      <!-- <div class="backgroundColor"></div> -->
+      <img src="../../assets/img/bg_myinfo.png" alt="" class="backgroundImg" />
+      <body>
+        <!-- <div class="middle">
         <div class="infoBox">
           <div class="imgContainer">
             <img :src="user.headimgurl" alt="" @click="toSet" />
@@ -40,103 +41,103 @@
           </div>
         </div>
       </div> -->
-      <div class="infoBox" @click="toSet">
-        <div class="infoLeft">
-          <img :src="user.headimgurl" alt="" class="head" />
-          <div class="info">
-            <div class="infoName">
-              <div>
-                {{ user.nickname }}
+        <div class="infoBox" @click="toSet">
+          <div class="infoLeft">
+            <img :src="user.headimgurl" alt="" class="head" />
+            <div class="info">
+              <div class="infoName">
+                <div>
+                  {{ user.nickname }}
+                </div>
+                <img src="../../assets/img/btn_arrow_right.png" />
               </div>
-              <img src="../../assets/img/btn_arrow_right.png" />
-            </div>
-            <div class="infoIntegral">
-              {{ user.integral }}
-              <span>积分</span>
+              <div class="infoIntegral">
+                {{ user.integral }}
+                <span>积分</span>
+              </div>
             </div>
           </div>
+          <div class="infoRight">
+            <!-- <img src="../assets/img/btn_arrow_right.png" /> -->
+          </div>
         </div>
-        <div class="infoRight">
-          <!-- <img src="../assets/img/btn_arrow_right.png" /> -->
-        </div>
-      </div>
-      <div class="bottomContainer ft14">
-        <!-- @click="sharescreen" -->
-        <!-- <button @click="sharescreen">
+        <div class="bottomContainer ft14">
+          <!-- @click="sharescreen" -->
+          <!-- <button @click="sharescreen">
           <div>
             <img src="../../assets/img/ic_airplay.png" />
             <span>开始投屏</span>
           </div>
           <img src="../../assets/img/btn_arrow_right.png" />
         </button> -->
-        <button @click="toMyOrder">
-          <div>
-            <img src="../../assets/img/ic_order_green.png" />
-            <span>我的订单</span>
-          </div>
-          <img src="../../assets/img/btn_arrow_right.png" />
-        </button>
-        <button @click="toMyCoupon">
-          <div>
-            <img src="../../assets/img/ic_coupon_green.png" />
-            <span>优惠券</span>
-          </div>
-          <img src="../../assets/img/btn_arrow_right.png" />
-        </button>
-        <button @click="toInvitation">
-          <div>
-            <img src="../../assets/img/ic_gift_green.png" />
-            <span>邀请有礼</span>
-          </div>
-          <img src="../../assets/img/btn_arrow_right.png" />
-        </button>
-        <button @click="toProfit">
-          <div>
-            <img src="../../assets/img/ic_profit.png" />
-            <span>我的收益</span>
-          </div>
-          <img src="../../assets/img/btn_arrow_right.png" />
-        </button>
-        <button
-          @click="commenton"
-          v-show="isDevice == 'ipad' || isDevice == 'iphone'"
-        >
-          <div>
-            <img src="../../assets/img/ic_score_green.png" />
-            <span>为我们评分</span>
-          </div>
-          <img src="../../assets/img/btn_arrow_right.png" />
-        </button>
-        <button @click="toAboutApp">
-          <div>
-            <img src="../../assets/img/ic_about_green.png" />
-            <span>关于Dipper</span>
-          </div>
-          <img src="../../assets/img/btn_arrow_right.png" />
-        </button>
-        <button @click="clearCache">
-          <div>
-            <img src="../../assets/img/ic_clear_green.png" />
-            <span>清理缓存</span>
-          </div>
-          <img src="../../assets/img/btn_arrow_right.png" />
-        </button>
-        <button @click="quit">
-          <div>
-            <img src="../../assets/img/ic_quit.png" />
-            <span>退出登录</span>
-          </div>
-          <img src="../../assets/img/btn_arrow_right.png" />
-        </button>
-        <!-- <button>
+          <button @click="toMyOrder">
+            <div>
+              <img src="../../assets/img/ic_order_green.png" />
+              <span>我的订单</span>
+            </div>
+            <img src="../../assets/img/btn_arrow_right.png" />
+          </button>
+          <button @click="toMyCoupon">
+            <div>
+              <img src="../../assets/img/ic_coupon_green.png" />
+              <span>优惠券</span>
+            </div>
+            <img src="../../assets/img/btn_arrow_right.png" />
+          </button>
+          <button @click="toInvitation">
+            <div>
+              <img src="../../assets/img/ic_gift_green.png" />
+              <span>邀请有礼</span>
+            </div>
+            <img src="../../assets/img/btn_arrow_right.png" />
+          </button>
+          <button @click="toProfit">
+            <div>
+              <img src="../../assets/img/ic_profit.png" />
+              <span>我的收益</span>
+            </div>
+            <img src="../../assets/img/btn_arrow_right.png" />
+          </button>
+          <button
+            @click="commenton"
+            v-show="isDevice == 'ipad' || isDevice == 'iphone'"
+          >
+            <div>
+              <img src="../../assets/img/ic_score_green.png" />
+              <span>为我们评分</span>
+            </div>
+            <img src="../../assets/img/btn_arrow_right.png" />
+          </button>
+          <button @click="toAboutApp">
+            <div>
+              <img src="../../assets/img/ic_about_green.png" />
+              <span>关于Dipper</span>
+            </div>
+            <img src="../../assets/img/btn_arrow_right.png" />
+          </button>
+          <button @click="clearCache">
+            <div>
+              <img src="../../assets/img/ic_clear_green.png" />
+              <span>清理缓存</span>
+            </div>
+            <img src="../../assets/img/btn_arrow_right.png" />
+          </button>
+          <button @click="quit">
+            <div>
+              <img src="../../assets/img/ic_quit.png" />
+              <span>退出登录</span>
+            </div>
+            <img src="../../assets/img/btn_arrow_right.png" />
+          </button>
+          <!-- <button>
           <div>
             <img src="../../assets/img/ic_mall.png" />
             <span>积分商城</span>
           </div>
           <img src="../../assets/img/btn_arrow_right.png" />
         </button> -->
-      </div>
-      <!-- <div class="bottomContainer">
+        </div>
+        <!-- <div class="bottomContainer">
         <button @click="toInquiry">
           <div>
             <img src="../../assets/img/ic_service.png" />
@@ -162,17 +163,18 @@
         </button>
        
       </div> -->
-    </body>
-    <van-popup round v-model="show">
-      <input
-        type="text"
-        placeholder="请输入验证码"
-        v-model="code"
-        class="codeInput ft16"
-        onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');"
-      />
-      <button class="codeButton" @click="sharescreen">确认</button>
-    </van-popup>
+      </body>
+      <van-popup round v-model="show">
+        <input
+          type="text"
+          placeholder="请输入验证码"
+          v-model="code"
+          class="codeInput ft16"
+          onkeyup="this.value=this.value.replace(/[^0-9-]+/,'');"
+        />
+        <button class="codeButton" @click="sharescreen">确认</button>
+      </van-popup>
+    </client-only>
   </div>
 </template>
 <script>
@@ -185,6 +187,7 @@ export default {
     [Popup.name]: Popup,
     [Toast.name]: Toast
   },
+  layout: "mainLayout",
   data() {
     return {
       isDevice: isDevice(),
