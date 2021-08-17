@@ -1,0 +1,30 @@
+export default {
+  optionList: [
+    { option: "A", Select: false },
+    { option: "B", Select: false },
+    { option: "C", Select: false },
+    { option: "D", Select: false },
+    { option: "E", Select: false },
+    { option: "F", Select: false },
+    { option: "G", Select: false },
+    { option: "H", Select: false },
+    { option: "I", Select: false },
+    { option: "J", Select: false },
+    { option: "K", Select: false },
+    { option: "L", Select: false },
+    { option: "M", Select: false },
+    { option: "N", Select: false },
+    { option: "O", Select: false },
+    { option: "P", Select: false },
+    { option: "Q", Select: false },
+    { option: "R", Select: false },
+    { option: "S", Select: false },
+    { option: "T", Select: false },
+    { option: "U", Select: false },
+    { option: "V", Select: false },
+    { option: "W", Select: false },
+    { option: "X", Select: false },
+    { option: "Y", Select: false },
+    { option: "Z", Select: false }
+  ]
+};

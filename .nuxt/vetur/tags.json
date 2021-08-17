@@ -1,8 +1,119 @@
 {
-  "NuxtLogo": {
-    "description": "Auto imported from components/NuxtLogo.vue"
+  "BroadcastSchedule": {
+    "description": "Auto imported from components/broadcastSchedule.vue"
   },
-  "Tutorial": {
-    "description": "Auto imported from components/Tutorial.vue"
+  "Card": {
+    "description": "Auto imported from components/card.vue"
+  },
+  "CardDemoPhone": {
+    "description": "Auto imported from components/cardDemoPhone.vue"
+  },
+  "CardIpad": {
+    "description": "Auto imported from components/cardIpad.vue"
+  },
+  "CardOrder": {
+    "description": "Auto imported from components/cardOrder.vue"
+  },
+  "CardPhone": {
+    "description": "Auto imported from components/cardPhone.vue"
+  },
+  "CardPrice": {
+    "description": "Auto imported from components/cardPrice.vue"
+  },
+  "Catalog": {
+    "description": "Auto imported from components/catalog.vue"
+  },
+  "ClassButton": {
+    "description": "Auto imported from components/classButton.vue"
+  },
+  "ClassTab": {
+    "description": "Auto imported from components/classTab.vue"
+  },
+  "CommetDialog": {
+    "description": "Auto imported from components/commetDialog.vue"
+  },
+  "Coupon": {
+    "description": "Auto imported from components/coupon.vue"
+  },
+  "DateTimeTab": {
+    "description": "Auto imported from components/dateTimeTab.vue"
+  },
+  "Details": {
+    "description": "Auto imported from components/details.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/header.vue"
+  },
+  "Headerweb": {
+    "description": "Auto imported from components/headerweb.vue"
+  },
+  "Homework": {
+    "description": "Auto imported from components/homework.vue"
+  },
+  "Institutions": {
+    "description": "Auto imported from components/Institutions.vue"
+  },
+  "Logistics": {
+    "description": "Auto imported from components/logistics.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from components/navigation.vue"
+  },
+  "NewCard": {
+    "description": "Auto imported from components/newCard.vue"
+  },
+  "OrderDetail": {
+    "description": "Auto imported from components/orderDetail.vue"
+  },
+  "Personage": {
+    "description": "Auto imported from components/personage.vue"
+  },
+  "RecordedSchedule": {
+    "description": "Auto imported from components/recordedSchedule.vue"
+  },
+  "ScheduleDate": {
+    "description": "Auto imported from components/scheduleDate.vue"
+  },
+  "StandardMyInfoPhone": {
+    "description": "Auto imported from components/standardMyInfoPhone.vue"
+  },
+  "Statistics": {
+    "description": "Auto imported from components/statistics.vue"
+  },
+  "StudentNotes": {
+    "description": "Auto imported from components/studentNotes.vue"
+  },
+  "TeacherNotes": {
+    "description": "Auto imported from components/teacherNotes.vue"
+  },
+  "TestTable": {
+    "description": "Auto imported from components/testTable.vue"
+  },
+  "TimeBar": {
+    "description": "Auto imported from components/timeBar.vue"
+  },
+  "TodayCard": {
+    "description": "Auto imported from components/todayCard.vue"
+  },
+  "VideoClassCard": {
+    "description": "Auto imported from components/videoClassCard.vue"
+  },
+  "VideoPackage": {
+    "description": "Auto imported from components/videoPackage.vue"
+  },
+  "PcList": {
+    "description": "Auto imported from components/pc/list.vue"
+  },
+  "PcScheduleDate": {
+    "description": "Auto imported from components/pc/pcScheduleDate.vue"
+  },
+  "ReportStudentPim": {
+    "description": "Auto imported from components/report/studentPim.vue"
+  },
+  "ReportTeacherComments": {
+    "description": "Auto imported from components/report/teacherComments.vue"
+  },
+  "Toast": {
+    "description": "Auto imported from components/toast/index.js"
   }
 }
