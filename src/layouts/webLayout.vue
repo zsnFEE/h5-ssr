@@ -61,8 +61,8 @@
   </div>
 </template>
 <script>
-import routeList from "../common/routeList";
-import { apiInfo, getApply } from "../api/common";
+// import routeList from "../common/routeList";
+// import { apiInfo, getApply } from "../../src/common";
 
 export default {
   name: "Myheader",

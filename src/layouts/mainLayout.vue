@@ -26,21 +26,21 @@
       @refresh="onRefresh"
     >
       <keep-alive>
-        <router-view v-if="$route.meta.keepalive" />
+        <Nuxt v-if="$route.meta.keepalive" />
       </keep-alive>
-      <router-view v-if="!$route.meta.keepalive" />
+      <Nuxt v-if="!$route.meta.keepalive" />
     </van-pull-refresh>
     <template v-else>
       <keep-alive>
-        <router-view v-if="$route.meta.keepalive" />
+        <Nuxt v-if="$route.meta.keepalive" />
       </keep-alive>
-      <router-view v-if="!$route.meta.keepalive" />
+      <Nuxt v-if="!$route.meta.keepalive" />
     </template>
   </div>
 </template>
 <script>
 import { PullRefresh } from "vant";
-import { isMobile } from "../common/util";
+import { isMobile } from "../../src/common/util";
 
 export default {
   components: {
