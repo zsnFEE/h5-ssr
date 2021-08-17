@@ -10,10 +10,10 @@ Vue.use(VueRouter);
 
 const listRouterMap = [
   {
-    path: "/",
-    name: "Studentschedules",
-    component: Studentschedules,
-    hidden: true
+    path: "/pc/Studentschedules",
+    name: "pc-Studentschedules",
+    component: Studentschedules
+    // hidden: true
     // path: "/",
     // name: "secondList",
     // component: secondList,
@@ -3075,6 +3075,8 @@ export function createRouter() {
   router = new VueRouter({
     mode: "history",
     base: process.env.BASE_URL,
+    linkActiveClass: "nuxt-link-active",
+    fallback: false,
     routes: [
       // ...webRouterMap,
       // ...classRouterMap,

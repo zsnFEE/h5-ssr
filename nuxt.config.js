@@ -16,11 +16,16 @@ export default {
   },
   srcDir: "src/",
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["assets/css/public.less", "assets/css/font.css", "vant/lib/index.css"],
+  css: [
+    "assets/css/public.less",
+    "assets/css/font.css",
+    "vant/lib/index.css",
+    "element-ui/lib/theme-chalk/index.css"
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ["@/plugins/vant", { src: "@/plugins/element-ui", ssr: true }],
-  css: ["element-ui/lib/theme-chalk/index.css"],
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 

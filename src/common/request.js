@@ -5,7 +5,7 @@ import router from "../router";
 import { sendMessage } from "../api/client";
 import { refreshToken } from "../api/common";
 import { isMobile } from "../common/util";
-
+import { createRouter } from "../router.js";
 const flag = isMobile();
 const AJAX = axios.create({
   baseURL: env.baseUrl,
@@ -15,7 +15,8 @@ const AJAX = axios.create({
 
 AJAX.interceptors.request.use(
   function(config) {
-    console.log(router);
+    console.log(createRouter());
+    let router = createRouter();
     let token;
     if (router.history.current.query.token) {
       config.headers["X-AccessToken"] = router.history.current.query.token;
