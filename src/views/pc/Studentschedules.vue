@@ -1,7 +1,9 @@
 <template>
   <div class="pcNewSchedule">
-    <PcScheduleDate v-if="!flag" ref="pcSchedule"></PcScheduleDate>
-    <ScheduleDate v-else type="2" ref="moblieSchedule"></ScheduleDate>
+    <client-only>
+      <PcScheduleDate v-if="!flag" ref="pcSchedule"></PcScheduleDate>
+      <ScheduleDate v-else type="2" ref="moblieSchedule"></ScheduleDate>
+    </client-only>
   </div>
 </template>
 <script>

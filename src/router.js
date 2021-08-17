@@ -6,14 +6,16 @@ import standardCurriculumListPhone from "./views/phone/standardCurriculumListPho
 import curriculumList from "./views/pc/curriculumList.vue";
 import secondList from "./views/list/secondList.vue";
 import Studentschedules from "./views/pc/Studentschedules.vue";
+import pcLogin from "./views/pc/Login.vue";
+
 Vue.use(VueRouter);
 
 const listRouterMap = [
   {
-    path: "/",
-    name: "Studentschedules",
-    component: Studentschedules,
-    hidden: true
+    path: "/pc/Studentschedules",
+    name: "pc-Studentschedules",
+    component: Studentschedules
+    // hidden: true
     // path: "/",
     // name: "secondList",
     // component: secondList,
@@ -38,6 +40,13 @@ const listRouterMap = [
     //     }
     //   }
     // ]
+  }
+];
+const loginMap = [
+  {
+    path: "/pc/Login",
+    name: "pcLogin",
+    component: pcLogin
   }
 ];
 
@@ -3075,7 +3084,10 @@ export function createRouter() {
   router = new VueRouter({
     mode: "history",
     base: process.env.BASE_URL,
+    linkActiveClass: "nuxt-link-active",
+    fallback: false,
     routes: [
+      ...loginMap,
       // ...webRouterMap,
       // ...classRouterMap,
       // ...ipadRouterMap,

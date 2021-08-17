@@ -18,14 +18,16 @@ export default {
   },
   srcDir: "src/",
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["assets/css/public.less", "assets/css/font.css", "vant/lib/index.css"],
+  css: [
+    "assets/css/public.less",
+    "assets/css/font.css",
+    "vant/lib/index.css",
+    "element-ui/lib/theme-chalk/index.css"
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: "@/plugins/vant", ssr: true },
-    { src: "@/plugins/element-ui", ssr: true }
-  ],
-  css: ["element-ui/lib/theme-chalk/index.css"],
+  plugins: ["@/plugins/vant", { src: "@/plugins/element-ui", ssr: true }],
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -45,6 +47,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     vendor: ["element-ui"],
+    extractCSS: { allChunks: true },
     babel: {
       plugins: [
         [

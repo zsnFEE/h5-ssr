@@ -1,23 +1,25 @@
 import axios from "axios";
 // import $nuxt from "nuxt";
 import env from "../config/env";
-import router from "../router.js";
+// import router from "../router.js";
 import { sendMessage } from "../api/client";
 import { isMobile } from "../common/util";
-
+import { createRouter } from "../router.js";
 const flag = isMobile();
 const AJAX = axios.create({
   baseURL: env.baseUrl,
   timeout: 30000,
   withCredentials: env.credential
 });
+let router;
 
 AJAX.interceptors.request.use(
   function(config) {
+    router = createRouter();
     let token;
-    // if (router.history.current.query.token) {
-    //   config.headers["X-AccessToken"] = router.history.current.query.token;
-    // }
+    if (router.history.current.query.token) {
+      config.headers["X-AccessToken"] = router.history.current.query.token;
+    }
 
     let bd_env = "";
     var name = "bd_env";
@@ -105,21 +107,20 @@ AJAX.interceptors.response.use(
       // ) {
       //   return;
       // }
-
-      if (flag) {
-        dsBridge.call("RoomSyn", JSON.stringify(model));
-        dsBridge.call("tokeninvalid", "", function(v) {});
-        if (browser.versions.iPad) {
-          router.push({ path: "/pc/Login", query: beforQuery });
-        } else if (browser.versions.mobile) {
-          router.push({ path: "/phone/loginPhone", query: beforQuery });
-        } else {
-          router.push({ path: "/pc/Login", query: beforQuery });
-        }
-      } else {
-        sendMessage({ signal: "expireTime", code: localStorage.code });
-        router.push({ path: "/pc/Login", query: beforQuery });
-      }
+      // if (flag) {
+      //   dsBridge.call("RoomSyn", JSON.stringify(model));
+      //   dsBridge.call("tokeninvalid", "", function(v) {});
+      //   if (browser.versions.iPad) {
+      //     router.push({ path: "/pc/Login", query: beforQuery });
+      //   } else if (browser.versions.mobile) {
+      //     router.push({ path: "/phone/loginPhone", query: beforQuery });
+      //   } else {
+      //     router.push({ path: "/pc/Login", query: beforQuery });
+      //   }
+      // } else {
+      //   sendMessage({ signal: "expireTime", code: localStorage.code });
+      //   router.push({ path: "/pc/Login", query: beforQuery });
+      // }
     }
     return response.data;
   },
