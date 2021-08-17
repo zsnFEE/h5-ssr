@@ -6,6 +6,7 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<Institutions>` | `<institutions>` (components/Institutions.vue)
 - `<BroadcastSchedule>` | `<broadcast-schedule>` (components/broadcastSchedule.vue)
 - `<Card>` | `<card>` (components/card.vue)
 - `<CardDemoPhone>` | `<card-demo-phone>` (components/cardDemoPhone.vue)
@@ -23,7 +24,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Header>` | `<header>` (components/header.vue)
 - `<Headerweb>` | `<headerweb>` (components/headerweb.vue)
 - `<Homework>` | `<homework>` (components/homework.vue)
-- `<Institutions>` | `<institutions>` (components/Institutions.vue)
 - `<Logistics>` | `<logistics>` (components/logistics.vue)
 - `<Navigation>` | `<navigation>` (components/navigation.vue)
 - `<NewCard>` | `<new-card>` (components/newCard.vue)
@@ -42,6 +42,6 @@ You can directly use them in pages and other components without the need to impo
 - `<VideoPackage>` | `<video-package>` (components/videoPackage.vue)
 - `<PcList>` | `<pc-list>` (components/pc/list.vue)
 - `<PcScheduleDate>` | `<pc-schedule-date>` (components/pc/pcScheduleDate.vue)
+- `<Toast>` | `<toast>` (components/toast/index.js)
 - `<ReportStudentPim>` | `<report-student-pim>` (components/report/studentPim.vue)
 - `<ReportTeacherComments>` | `<report-teacher-comments>` (components/report/teacherComments.vue)
-- `<Toast>` | `<toast>` (components/toast/index.js)

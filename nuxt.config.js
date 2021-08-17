@@ -1,3 +1,5 @@
+const path = require("path"); // 需要引入
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -19,7 +21,10 @@ export default {
   css: ["assets/css/public.less", "assets/css/font.css", "vant/lib/index.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["@/plugins/vant", { src: "@/plugins/element-ui", ssr: true }],
+  plugins: [
+    { src: "@/plugins/vant", ssr: true },
+    { src: "@/plugins/element-ui", ssr: true }
+  ],
   css: ["element-ui/lib/theme-chalk/index.css"],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
