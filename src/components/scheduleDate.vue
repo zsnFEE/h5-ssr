@@ -1,5 +1,6 @@
 <template>
   <div class="dateBar">
+    <!-- <client-only> -->
     <div class="header">
       <div class="title">
         <div class="dataTitle">
@@ -65,7 +66,7 @@
                 <div class="week">{{ item.text }}</div>
                 <div class="day">{{ item.content }}</div>
                 <div
-                  v-if="item.have_schedule == 1"
+                  v-show="item.have_schedule == 1"
                   class="sign"
                   :class="[
                     selectDay == item.date ? 'activeSign' : '',
@@ -80,7 +81,7 @@
         </div>
       </div>
 
-      <div class="plate" v-if="courselist.length == 0">
+      <div class="plate" v-show="courselist.length == 0">
         <div class="notLiveBroadcast">
           <img
             style="width:150px;height:150px;"
@@ -112,7 +113,7 @@
                 : ''
             "
           ></div>
-          <div class="line" v-if="courselist.length > 1"></div>
+          <div class="line" v-show="courselist.length > 1"></div>
         </div>
         <div
           class="rightcard"
@@ -137,7 +138,7 @@
               >
             </div>
             <div>
-              <span class="leave_text" v-if="item.leave_text">
+              <span class="leave_text" v-show="item.leave_text">
                 {{ item.leave_text }}
               </span>
             </div>
@@ -156,39 +157,39 @@
               <div class="attend">
                 {{ item.is_in_schedule != 1 ? item.and_date : "" }}
               </div>
-              <div class="btn" v-if="item.schedule_status != 3">
+              <div class="btn" v-show="item.schedule_status != 3">
                 <div
                   class="divButton "
-                  v-if="item.is_in_schedule == 1 && !item.leave_text"
+                  v-show="item.is_in_schedule == 1 && !item.leave_text"
                   @click="start(item)"
                 >
                   开始上课
                 </div>
               </div>
-              <div class="btn" v-if="item.schedule_status == 3">
+              <div class="btn" v-show="item.schedule_status == 3">
                 <div
                   class="afterButton"
-                  v-if="item.schedule_status == 3"
+                  v-show="item.schedule_status == 3"
                   @click="toEvaluate(item, index)"
                 >
                   查看报告
                 </div>
                 <div
                   class="afterButton"
-                  v-if="item.schedule_status == 3"
+                  v-show="item.schedule_status == 3"
                   @click="playback(item)"
                 >
                   课程回顾
                 </div>
                 <div
                   class="afterButton markparent"
-                  v-if="item.schedule_status == 3 && item.is_end_topic == 1"
+                  v-show="item.schedule_status == 3 && item.is_end_topic == 1"
                   @click="tohomework(item)"
                 >
                   课后练习
                   <img
                     class="mark"
-                    v-if="item.is_end_topic_stats == 1"
+                    v-show="item.is_end_topic_stats == 1"
                     src="../assets/img/img-wancheng.png"
                   />
                 </div>
@@ -212,9 +213,9 @@
       />
     </van-popup>
     <!--结束-->
+    <!-- </client-only> -->
   </div>
 </template>
-
 <script>
 import { DatetimePicker, Popup, Picker } from "vant";
 import { sendMessage } from "../api/client";
@@ -225,7 +226,7 @@ import {
   getMyTopicReport
 } from "../api/common";
 import ClassButton from "../components/classButton";
-import { isMobile, Debounce } from "../common/util";
+import { isMobile } from "../common/util";
 
 export default {
   props: ["scheduleDate", "type"],

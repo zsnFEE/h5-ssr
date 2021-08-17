@@ -42,6 +42,6 @@ You can directly use them in pages and other components without the need to impo
 - `<VideoPackage>` | `<video-package>` (components/videoPackage.vue)
 - `<PcList>` | `<pc-list>` (components/pc/list.vue)
 - `<PcScheduleDate>` | `<pc-schedule-date>` (components/pc/pcScheduleDate.vue)
+- `<Toast>` | `<toast>` (components/toast/index.js)
 - `<ReportStudentPim>` | `<report-student-pim>` (components/report/studentPim.vue)
 - `<ReportTeacherComments>` | `<report-teacher-comments>` (components/report/teacherComments.vue)
-- `<Toast>` | `<toast>` (components/toast/index.js)
