@@ -20,22 +20,24 @@
       </keep-alive>
       <router-view v-if="!$route.meta.keepalive" />
     </template> -->
-    <van-pull-refresh
-      v-if="isMobile && !$route.meta.noRefresh"
-      v-model="isLoading"
-      @refresh="onRefresh"
-    >
-      <keep-alive>
-        <Nuxt v-if="$route.meta.keepalive" />
-      </keep-alive>
-      <Nuxt v-if="!$route.meta.keepalive" />
-    </van-pull-refresh>
-    <template v-else>
-      <keep-alive>
-        <Nuxt v-if="$route.meta.keepalive" />
-      </keep-alive>
-      <Nuxt v-if="!$route.meta.keepalive" />
-    </template>
+    <client-only>
+      <van-pull-refresh
+        v-if="isMobile && !$route.meta.noRefresh"
+        v-model="isLoading"
+        @refresh="onRefresh"
+      >
+        <keep-alive>
+          <Nuxt v-if="$route.meta.keepalive" />
+        </keep-alive>
+        <Nuxt v-if="!$route.meta.keepalive" />
+      </van-pull-refresh>
+      <template v-else>
+        <keep-alive>
+          <Nuxt v-if="$route.meta.keepalive" />
+        </keep-alive>
+        <Nuxt v-if="!$route.meta.keepalive" />
+      </template>
+    </client-only>
   </div>
 </template>
 <script>
@@ -53,7 +55,7 @@ export default {
       isMobile: isMobile()
     };
   },
-  created() {},
+  mounted() {},
   methods: {
     onRefresh() {
       let that = this;

@@ -141,20 +141,24 @@ export const Debounce = (fn, t) => {
  * @returns {Boolean}
  */
 export const isWeiXin = () => {
-  let ua = window.navigator.userAgent.toLowerCase();
-  if (ua.match(/MicroMessenger/i) == "micromessenger") {
-    return true;
-  } else {
-    return false;
+  if (process.browser) {
+    let ua = window.navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+      return true;
+    } else {
+      return false;
+    }
   }
 };
 
 export const isAlipay = () => {
-  let ua = window.navigator.userAgent.toLowerCase();
-  if (ua.match(/Alipay/i) == "alipay") {
-    return true;
-  } else {
-    return false;
+  if (process.browser) {
+    let ua = window.navigator.userAgent.toLowerCase();
+    if (ua.match(/Alipay/i) == "alipay") {
+      return true;
+    } else {
+      return false;
+    }
   }
 };
 

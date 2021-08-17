@@ -30,7 +30,7 @@ export default {
     PcScheduleDate,
     [List.name]: List
   },
-
+  layout: "mainLayout",
   data() {
     return {
       list: [],
