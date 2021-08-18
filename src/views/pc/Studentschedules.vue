@@ -85,7 +85,6 @@ export default {
       myLiveClassList({}).then(res => {
         if (res.code == 0) {
           this.count = res.data.count;
-          console.log(this.count);
           this.classlist = this.classlist.concat(res.data.list);
         } else {
           this.$toast(res.msg || res.message);

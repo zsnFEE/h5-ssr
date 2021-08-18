@@ -1,219 +1,223 @@
 <template>
   <div class="dateBar">
-    <!-- <client-only> -->
-    <div class="header">
-      <div class="title">
-        <div class="dataTitle">
-          <div class="date" @click="selectDate">
-            <span
-              >{{
-                selectDay.split("-")[0] +
-                  "年" +
-                  selectDay.split("-")[1] +
-                  "月" +
-                  selectDay.split("-")[2] +
-                  "日"
-              }}
-            </span>
-            <img
-              :class="popup == true ? 'rotate' : ''"
-              src="../assets/img/btn_arrow_down.png"
-            />
+    <client-only>
+      <div class="header">
+        <div class="title">
+          <div class="dataTitle">
+            <div class="date" @click="selectDate">
+              <span
+                >{{
+                  selectDay.split("-")[0] +
+                    "年" +
+                    selectDay.split("-")[1] +
+                    "月" +
+                    selectDay.split("-")[2] +
+                    "日"
+                }}
+              </span>
+              <img
+                :class="popup == true ? 'rotate' : ''"
+                src="../assets/img/btn_arrow_down.png"
+              />
+            </div>
           </div>
+          <p @click="todayChanged">
+            <img src="../assets/img/ic_schedule.png" alt="" />
+            <span>今天</span>
+          </p>
         </div>
-        <p @click="todayChanged">
-          <img src="../assets/img/ic_schedule.png" alt="" />
-          <span>今天</span>
-        </p>
-      </div>
-      <div
-        id="testBox"
-        @touchstart.stop="touchstart"
-        @touchmove.stop.prevent="touchmove"
-        @touchend="touchend"
-      >
         <div
-          class="testBoxWrapper"
-          :style="
-            `transform: translate3d(${wrapperDateCount *
-              100}%, 0px, 0px);height:100%;`
-          "
+          id="testBox"
+          @touchstart.stop="touchstart"
+          @touchmove.stop.prevent="touchmove"
+          @touchend="touchend"
         >
-          <ul
-            v-for="index in 3"
-            :key="index"
+          <div
+            class="testBoxWrapper"
             :style="
-              `transform: translate3d(${(index == 1
-                ? count - 1
-                : index == 2
-                ? count
-                : count + 1) * 100}%, 0px, 0px)`
+              `transform: translate3d(${wrapperDateCount *
+                100}%, 0px, 0px);height:100%;`
             "
           >
-            <li
-              v-for="(item, i) in index == 1
-                ? firstDateList
-                : index == 2
-                ? middleDateList
-                : lastDateList"
-              :key="i"
+            <ul
+              v-for="index in 3"
+              :key="index"
+              :style="
+                `transform: translate3d(${(index == 1
+                  ? count - 1
+                  : index == 2
+                  ? count
+                  : count + 1) * 100}%, 0px, 0px)`
+              "
             >
-              <div
-                class="dateWrapper"
-                @click="setnum(item)"
-                :class="[selectDay == item.date ? 'active' : '']"
+              <li
+                v-for="(item, i) in index == 1
+                  ? firstDateList
+                  : index == 2
+                  ? middleDateList
+                  : lastDateList"
+                :key="i"
               >
-                <div class="week">{{ item.text }}</div>
-                <div class="day">{{ item.content }}</div>
                 <div
-                  v-show="item.have_schedule == 1"
-                  class="sign"
-                  :class="[
-                    selectDay == item.date ? 'activeSign' : '',
-                    new Date(item.date).getTime() > new Date(today).getTime()
-                      ? 'futureSchedule'
-                      : ''
-                  ]"
-                ></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="plate" v-show="courselist.length == 0">
-        <div class="notLiveBroadcast">
-          <img
-            style="width:150px;height:150px;"
-            src="../assets/img/img-curriculum@2x.png"
-          />
-          <div class="imghint">
-            {{
-              getmondate == formatDate(new Date(), "yyyy-MM").substr(0, 10) &&
-              selectDay == today
-                ? "今日暂无课程安排"
-                : getmondate ==
-                    formatDate(new Date(), "yyyy-MM").substr(0, 10) &&
-                  selectDay > today
-                ? "当日暂无课程安排"
-                : "当日无课程安排"
-            }}
+                  class="dateWrapper"
+                  @click="setnum(item)"
+                  :class="[selectDay == item.date ? 'active' : '']"
+                >
+                  <div class="week">{{ item.text }}</div>
+                  <div class="day">{{ item.content }}</div>
+                  <div
+                    v-show="item.have_schedule == 1"
+                    class="sign"
+                    :class="[
+                      selectDay == item.date ? 'activeSign' : '',
+                      new Date(item.date).getTime() > new Date(today).getTime()
+                        ? 'futureSchedule'
+                        : ''
+                    ]"
+                  ></div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="courselist" v-for="(item, index) in courselist" :key="index">
-        <div class="left_line">
-          <div
-            class="round"
-            :class="
-              item.is_in_schedule == 1
-                ? 'roundstay'
-                : item.schedule_status == 3
-                ? 'roundend'
-                : ''
-            "
-          ></div>
-          <div class="line" v-show="courselist.length > 1"></div>
+
+        <div class="plate" v-show="courselist.length == 0">
+          <div class="notLiveBroadcast">
+            <img
+              style="width:150px;height:150px;"
+              src="../assets/img/img-curriculum@2x.png"
+            />
+            <div class="imghint">
+              {{
+                getmondate == formatDate(new Date(), "yyyy-MM").substr(0, 10) &&
+                selectDay == today
+                  ? "今日暂无课程安排"
+                  : getmondate ==
+                      formatDate(new Date(), "yyyy-MM").substr(0, 10) &&
+                    selectDay > today
+                  ? "当日暂无课程安排"
+                  : "当日无课程安排"
+              }}
+            </div>
+          </div>
         </div>
         <div
-          class="rightcard"
-          :class="index == courselist.length - 1 ? 'nobottom' : ''"
+          class="courselist"
+          v-for="(item, index) in courselist"
+          :key="index"
         >
-          <div class="hint">
-            <div>
-              <span class="time"
-                >{{ item.start_date }}-{{ item.end_date }}</span
-              >
-              <span
-                class="hintfont"
-                :class="
-                  item.is_in_schedule == 1
-                    ? 'stay'
-                    : item.schedule_status == 3
-                    ? 'end'
-                    : ''
-                "
-              >
-                {{ item.schedule_status_text }}</span
-              >
-            </div>
-            <div>
-              <span class="leave_text" v-show="item.leave_text">
-                {{ item.leave_text }}
-              </span>
-            </div>
+          <div class="left_line">
+            <div
+              class="round"
+              :class="
+                item.is_in_schedule == 1
+                  ? 'roundstay'
+                  : item.schedule_status == 3
+                  ? 'roundend'
+                  : ''
+              "
+            ></div>
+            <div class="line" v-show="courselist.length > 1"></div>
           </div>
-          <div class="caedbottom">
-            <div class="lessonname">
-              {{ item.lesson_info.name }}
-            </div>
-            <div class="coursename">课程：{{ item.class_info.name }}</div>
-            <div class="teacher">
-              <span class="teachername"
-                >教师：{{ item.teacher_info.realname }}</span
-              >
-            </div>
-            <div class="footer">
-              <div class="attend">
-                {{ item.is_in_schedule != 1 ? item.and_date : "" }}
+          <div
+            class="rightcard"
+            :class="index == courselist.length - 1 ? 'nobottom' : ''"
+          >
+            <div class="hint">
+              <div>
+                <span class="time"
+                  >{{ item.start_date }}-{{ item.end_date }}</span
+                >
+                <span
+                  class="hintfont"
+                  :class="
+                    item.is_in_schedule == 1
+                      ? 'stay'
+                      : item.schedule_status == 3
+                      ? 'end'
+                      : ''
+                  "
+                >
+                  {{ item.schedule_status_text }}</span
+                >
               </div>
-              <div class="btn" v-show="item.schedule_status != 3">
-                <div
-                  class="divButton "
-                  v-show="item.is_in_schedule == 1 && !item.leave_text"
-                  @click="start(item)"
-                >
-                  开始上课
-                </div>
+              <div>
+                <span class="leave_text" v-show="item.leave_text">
+                  {{ item.leave_text }}
+                </span>
               </div>
-              <div class="btn" v-show="item.schedule_status == 3">
-                <div
-                  class="afterButton"
-                  v-show="item.schedule_status == 3"
-                  @click="toEvaluate(item, index)"
+            </div>
+            <div class="caedbottom">
+              <div class="lessonname">
+                {{ item.lesson_info.name }}
+              </div>
+              <div class="coursename">课程：{{ item.class_info.name }}</div>
+              <div class="teacher">
+                <span class="teachername"
+                  >教师：{{ item.teacher_info.realname }}</span
                 >
-                  查看报告
+              </div>
+              <div class="footer">
+                <div class="attend">
+                  {{ item.is_in_schedule != 1 ? item.and_date : "" }}
                 </div>
-                <div
-                  class="afterButton"
-                  v-show="item.schedule_status == 3"
-                  @click="playback(item)"
-                >
-                  课程回顾
+                <div class="btn" v-show="item.schedule_status != 3">
+                  <div
+                    class="divButton "
+                    v-show="item.is_in_schedule == 1 && !item.leave_text"
+                    @click="start(item)"
+                  >
+                    开始上课
+                  </div>
                 </div>
-                <div
-                  class="afterButton markparent"
-                  v-show="item.schedule_status == 3 && item.is_end_topic == 1"
-                  @click="tohomework(item)"
-                >
-                  课后练习
-                  <img
-                    class="mark"
-                    v-show="item.is_end_topic_stats == 1"
-                    src="../assets/img/img-wancheng.png"
-                  />
+                <div class="btn" v-show="item.schedule_status == 3">
+                  <div
+                    class="afterButton"
+                    v-show="item.schedule_status == 3"
+                    @click="toEvaluate(item, index)"
+                  >
+                    查看报告
+                  </div>
+                  <div
+                    class="afterButton"
+                    v-show="item.schedule_status == 3"
+                    @click="playback(item)"
+                  >
+                    课程回顾
+                  </div>
+                  <div
+                    class="afterButton markparent"
+                    v-show="item.schedule_status == 3 && item.is_end_topic == 1"
+                    @click="tohomework(item)"
+                  >
+                    课后练习
+                    <img
+                      class="mark"
+                      v-show="item.is_end_topic_stats == 1"
+                      src="../assets/img/img-wancheng.png"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!--开始-->
-    <van-popup v-model="popup" position="bottom" round>
-      <van-datetime-picker
-        type="date"
-        v-model="currentDate"
-        :min-date="minDate"
-        :max-date="maxDate"
-        :formatter="formatter"
-        @cancel="popup = false"
-        @confirm="onAddrConfirm"
-        @change="dateChanged"
-      />
-    </van-popup>
-    <!--结束-->
-    <!-- </client-only> -->
+      <!--开始-->
+      <van-popup v-model="popup" position="bottom" round>
+        <van-datetime-picker
+          type="date"
+          v-model="currentDate"
+          :min-date="minDate"
+          :max-date="maxDate"
+          :formatter="formatter"
+          @cancel="popup = false"
+          @confirm="onAddrConfirm"
+          @change="dateChanged"
+        />
+      </van-popup>
+      <!--结束-->
+    </client-only>
   </div>
 </template>
 <script>
@@ -304,14 +308,16 @@ export default {
     }
   },
   mounted() {
-    this.gettoday();
-    this.getDates();
-    this.maxDate = new Date(
-      this.today.split("-")[0],
-      this.today.split("-")[1] - 1 + 7,
-      0
-    );
-    this.todayChanged();
+    if (process.browser) {
+      this.gettoday();
+      this.getDates();
+      this.maxDate = new Date(
+        this.today.split("-")[0],
+        this.today.split("-")[1] - 1 + 7,
+        0
+      );
+      this.todayChanged();
+    }
   },
   methods: {
     refresh() {
