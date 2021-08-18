@@ -18,7 +18,6 @@ export default {
     script: [{ src: "https://cdn.jsdelivr.net/npm/dsbridge/dist/dsbridge.js" }]
   },
   srcDir: "src/",
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     "assets/css/public.less",
     "assets/css/font.css",
@@ -30,7 +29,8 @@ export default {
   plugins: [
     "@/plugins/vant",
     { src: "@/plugins/element-ui", ssr: true },
-    "@/plugins/header"
+    "@/plugins/header",
+    "@/plugins/title-directive"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
