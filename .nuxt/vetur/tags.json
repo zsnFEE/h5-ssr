@@ -1,4 +1,7 @@
 {
+  "Institutions": {
+    "description": "Auto imported from components/Institutions.vue"
+  },
   "BroadcastSchedule": {
     "description": "Auto imported from components/broadcastSchedule.vue"
   },
@@ -49,9 +52,6 @@
   },
   "Homework": {
     "description": "Auto imported from components/homework.vue"
-  },
-  "Institutions": {
-    "description": "Auto imported from components/Institutions.vue"
   },
   "Logistics": {
     "description": "Auto imported from components/logistics.vue"
