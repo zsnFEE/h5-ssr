@@ -50,13 +50,10 @@
 </template>
 
 <script>
-import QRCode from "qrcodejs2";
 import env from "../../config/env";
 import { getMemberCode, shareActivityDetail } from "../../api/common";
 import html2canvas from "html2canvas";
 import { Toast } from "vant";
-
-const URL = env.baseUrl;
 
 export default {
   components: {

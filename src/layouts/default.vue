@@ -1,6 +1,5 @@
 <template>
-  <div class="mainLayout">
-    <!-- <van-pull-refresh
+  <!-- <van-pull-refresh
       v-if="isMobile && !$route.meta.noRefresh"
       v-model="isLoading"
       @refresh="onRefresh"
@@ -20,17 +19,23 @@
       </keep-alive>
       <router-view v-if="!$route.meta.keepalive" />
     </template> -->
-    <client-only>
-      <van-pull-refresh
-        v-if="isMobile && !$route.meta.noRefresh"
-        v-model="isLoading"
-        @refresh="onRefresh"
-      >
-        <Nuxt />
-      </van-pull-refresh>
-      <Nuxt v-else />
-    </client-only>
-  </div>
+  <client-only>
+    <div
+      id="app"
+      :class="[isMobile ? '' : 'pc', $route.meta.bg == 'dark' ? 'dark' : '']"
+    >
+      <div class="mainLayout">
+        <van-pull-refresh
+          v-if="isMobile && !$route.meta.noRefresh"
+          v-model="isLoading"
+          @refresh="onRefresh"
+        >
+          <Nuxt />
+        </van-pull-refresh>
+        <Nuxt v-else />
+      </div>
+    </div>
+  </client-only>
 </template>
 <script>
 import { PullRefresh } from "vant";
@@ -61,6 +66,29 @@ export default {
 </script>
 
 <style lang="less" scoped>
+* {
+  -webkit-user-select: none; /*禁用手机浏览器的用户选择功能 */
+  -moz-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none; /*IE10*/
+  user-select: none;
+  outline: none;
+}
+input,
+textarea {
+  -webkit-user-select: auto; /*webkit浏览器*/
+  outline: none;
+}
+#app {
+  height: 100vh;
+  &.dark {
+    background: #1e1e1f;
+  }
+}
+.pc {
+  overflow-x: hidden;
+  // height: auto !important;
+}
 .mainLayout {
   height: 100%;
   .contain {

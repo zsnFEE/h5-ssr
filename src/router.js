@@ -1,20 +1,72 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import mainLayout from "./layouts/mainLayout.vue";
-import webLayout from "./layouts/webLayout.vue";
-import standardCurriculumListPhone from "./views/phone/standardCurriculumListPhone.vue";
+
 import curriculumList from "./views/pc/curriculumList.vue";
 import secondList from "./views/list/secondList.vue";
 import Studentschedules from "./views/pc/Studentschedules.vue";
-import myInfoPhone from "./views/phone/myInfoPhone.vue";
 import pcLogin from "./views/pc/Login.vue";
+import morePhone from "./views/phone/morePhone.vue";
+import homePagePhone from "./views/phone/homePagePhone.vue";
+import curriculumListPhone from "./views/phone/curriculumListPhone.vue";
+import findPhone from "./views/phone/findPhone.vue";
+import loginPhone from "./views/phone/loginPhone.vue";
+import orderPhone from "./views/phone/orderPhone.vue";
+import orderDetailsPhone from "./views/phone/orderDetailsPhone.vue";
+import courseDetailsPhone from "./views/phone/courseDetailsPhone.vue";
+import addAddressPhone from "./views/phone/addAddressPhone.vue";
+import wechatAddPhone from "./views/phone/wechatAddPhone.vue";
+import secondListPhone from "./views/phone/secondListPhone.vue";
+import myInfoPhone from "./views/phone/myInfoPhone.vue";
+import settingPhone from "./views/phone/settingPhone.vue";
+import policyPhone from "./views/phone/policyPhone.vue";
+import privacyPhone from "./views/phone/privacyPhone.vue";
+import middlePagePhone from "./views/phone/middlePagePhone.vue";
+import improveInfoPhone from "./views/phone/improveInfoPhone.vue";
+import smallClassPhone from "./views/phone/smallClassPhone.vue";
+import classDetailsPhone from "./views/phone/classDetailsPhone.vue";
+import projectionPhone from "./views/phone/projectionPhone.vue";
+import createOrderAddressPhone from "./views/phone/createOrderAddressPhone.vue";
+import writeAddressPhone from "./views/phone/writeAddressPhone.vue";
+import choiceAddressPhone from "./views/phone/choiceAddressPhone.vue";
+import recordListPhone from "./views/phone/recordListPhone.vue";
+import smallClassDetailsPhone from "./views/phone/smallClassDetailsPhone.vue";
+import invitationPhone from "./views/phone/invitationPhone.vue";
+import invitationHomePhone from "./views/phone/invitationHomePhone.vue";
+import invitationProfitPhone from "./views/phone/invitationProfitPhone.vue";
+import invitationRulePhone from "./views/phone/invitationRulePhone.vue";
+import invitationDrawingPhone from "./views/phone/invitationDrawingPhone.vue";
+import inquiryTeacherPhone from "./views/phone/inquiryTeacherPhone.vue";
+import replacePhone from "./views/phone/replacePhone.vue";
+import updateNamePhone from "./views/phone/updateNamePhone.vue";
+import personalPhone from "./views/phone/personalPhone.vue";
+import aboutAppPhone from "./views/phone/aboutAppPhone.vue";
+import helpCenterPhone from "./views/phone/helpCenterPhone.vue";
+import toTeachPhone from "./views/phone/toTeachPhone.vue";
+import evaluatePhone from "./views/phone/evaluatePhone.vue";
+import myCouponPhone from "./views/phone/myCouponPhone.vue";
+import useCouponPhone from "./views/phone/useCouponPhone.vue";
+import standardCurriculumListPhone from "./views/phone/standardCurriculumListPhone.vue";
+import phoneNewSchedule from "./views/phone/phoneNewSchedule.vue";
+import accessCode from "./views/phone/accessCode.vue";
+import changePassword from "./views/phone/changePassword.vue";
+import retrievePassword from "./views/phone/retrievePassword.vue";
+import logisticsInfo from "./views/phone/logisticsInfo.vue";
+import report from "./views/report/report.vue";
+import learningReport from "./views/report/learningReport.vue";
+import evaluationAfter from "./views/report/evaluationAfter.vue";
+import teacherPreview from "./views/report/teacherPreview.vue";
+import preview from "./views/report/preview.vue";
+import homework from "./views/report/homework.vue";
+import practiceReport from "./views/report/practiceReport.vue";
+import homeworkDetail from "./views/report/homeworkDetail.vue";
+import imgPreview from "./views/report/imgPreview.vue";
 
 Vue.use(VueRouter);
 
 const listRouterMap = [
   {
     path: "/pc/Studentschedules",
-    name: "pc-Studentschedules",
+    name: "pcStudentschedules",
     component: Studentschedules,
     meta: {
       breadcrumb: "报名成功1"
@@ -30,12 +82,461 @@ const loginMap = [
 ];
 const phoneMap = [
   {
+    path: "/phone/morePhone",
+    name: "morePhone",
+    component: morePhone,
+    meta: {
+      breadcrumb: "更多移动端"
+    }
+  },
+  {
+    path: "/phone/homePagePhone",
+    name: "homePagePhone",
+    component: homePagePhone,
+    meta: {
+      breadcrumb: "首页移动端"
+    }
+  },
+  {
+    path: "/phone/curriculumListPhone",
+    name: "curriculumListPhone",
+    component: curriculumListPhone,
+    meta: {
+      breadcrumb: "我的课程移动端"
+    }
+  },
+  {
+    path: "/phone/findPhone",
+    name: "findPhone",
+    component: findPhone,
+    meta: {
+      breadcrumb: "发现移动端"
+    }
+  },
+  {
+    path: "/phone/loginPhone",
+    name: "loginPhone",
+    component: loginPhone,
+    meta: {
+      breadcrumb: "登录移动端"
+    }
+  },
+  {
+    path: "/phone/orderPhone",
+    name: "orderPhone",
+    component: orderPhone,
+    meta: {
+      breadcrumb: "订单移动端"
+    }
+  },
+  {
+    path: "/phone/orderDetailsPhone",
+    name: "orderDetailsPhone",
+    component: orderDetailsPhone,
+    meta: {
+      breadcrumb: "订单详情移动端"
+    }
+  },
+  {
+    path: "/phone/courseDetailsPhone",
+    name: "courseDetailsPhone",
+    component: courseDetailsPhone,
+    meta: {
+      breadcrumb: "课程详情移动端审核版"
+    }
+  },
+  {
+    path: "/phone/addAddressPhone",
+    name: "addAddressPhone",
+    component: addAddressPhone,
+    meta: {
+      breadcrumb: "填写收货地址移动端"
+    }
+  },
+  {
+    path: "/phone/wechatAddPhone",
+    name: "wechatAddPhone",
+    component: wechatAddPhone,
+    meta: {
+      breadcrumb: "添加微信移动端"
+    }
+  },
+  {
+    path: "/phone/secondListPhone",
+    name: "secondListPhone",
+    component: secondListPhone,
+    meta: {
+      breadcrumb: "二阶目录移动端"
+    }
+  },
+  {
     path: "/phone/myInfoPhone",
     name: "myInfoPhone",
-    component: myInfoPhone
+    component: myInfoPhone,
+    meta: {
+      breadcrumb: "我的移动端"
+    }
+  },
+  {
+    path: "/phone/policyPhone",
+    name: "policyPhone",
+    component: policyPhone,
+    meta: {
+      breadcrumb: "用户服务条款移动端"
+    }
+  },
+  {
+    path: "/phone/privacyPhone",
+    name: "privacyPhone",
+    component: privacyPhone,
+    meta: {
+      breadcrumb: "用户隐私条款移动端"
+    }
+  },
+  {
+    path: "/phone/middlePagePhone",
+    name: "middlePagePhone",
+    component: middlePagePhone,
+    meta: {
+      breadcrumb: "微信支付中间页款移动端"
+    }
+  },
+  {
+    path: "/phone/improveInfoPhone",
+    name: "improveInfoPhone",
+    component: improveInfoPhone,
+    meta: {
+      breadcrumb: "完善个人信息移动端"
+    }
+  },
+  {
+    path: "/phone/smallClassPhone",
+    name: "smallClassPhone",
+    component: smallClassPhone,
+    meta: {
+      breadcrumb: "小课堂移动端"
+    }
+  },
+  {
+    path: "/phone/classDetailsPhone",
+    name: "classDetailsPhone",
+    component: classDetailsPhone,
+    meta: {
+      breadcrumb: "课程详情移动端"
+    }
+  },
+  {
+    path: "/phone/projectionPhone",
+    name: "projectionPhone",
+    component: projectionPhone,
+    meta: {
+      breadcrumb: "课件投屏移动端"
+    }
+  },
+  {
+    path: "/phone/createOrderAddressPhone",
+    name: "createOrderAddressPhone",
+    component: createOrderAddressPhone,
+    meta: {
+      breadcrumb: "创建订单移动端"
+    }
+  },
+  {
+    path: "/phone/writeAddressPhone",
+    name: "writeAddressPhone",
+    component: writeAddressPhone,
+    meta: {
+      breadcrumb: "填写地址移动端"
+    }
+  },
+  {
+    path: "/phone/choiceAddressPhone",
+    name: "choiceAddressPhone",
+    component: choiceAddressPhone,
+    meta: {
+      breadcrumb: "选择地址移动端"
+    }
+  },
+  {
+    path: "/phone/recordListPhone",
+    name: "recordListPhone",
+    component: recordListPhone,
+    meta: {
+      breadcrumb: "录播课二级列表移动端"
+    }
+  },
+  {
+    path: "/phone/smallClassDetailsPhone",
+    name: "smallClassDetailsPhone",
+    component: smallClassDetailsPhone,
+    meta: {
+      title: "课程详情",
+      breadcrumb: "小课堂详情移动端"
+    }
+  },
+  {
+    path: "/phone/invitationPhone",
+    name: "invitationPhone",
+    component: invitationPhone,
+    meta: {
+      breadcrumb: "邀请有礼移动端"
+    }
+  },
+  {
+    path: "/phone/invitationHomePhone",
+    name: "invitationHomePhone",
+    component: invitationHomePhone,
+    meta: {
+      breadcrumb: "首页邀请有礼移动端"
+    }
+  },
+  {
+    path: "/phone/invitationProfitPhone",
+    name: "invitationProfitPhone",
+    component: invitationProfitPhone,
+    meta: {
+      breadcrumb: "邀请收益移动端"
+    }
+  },
+  {
+    path: "/phone/invitationRulePhone",
+    name: "invitationRulePhone",
+    component: invitationRulePhone,
+    meta: {
+      breadcrumb: "邀请收益规则移动端"
+    }
+  },
+  {
+    path: "/phone/invitationDrawingPhone",
+    name: "invitationDrawingPhone",
+    component: invitationDrawingPhone,
+    meta: {
+      breadcrumb: "邀请提现移动端"
+    }
+  },
+  {
+    path: "/phone/inquiryTeacherPhone",
+    name: "inquiryTeacherPhone",
+    component: inquiryTeacherPhone,
+    meta: {
+      breadcrumb: "询问教师移动端"
+    }
+  },
+  {
+    path: "/phone/replacePhone",
+    name: "replacePhone",
+    component: replacePhone,
+    meta: {
+      breadcrumb: "更换手机号移动端"
+    }
+  },
+  {
+    path: "/phone/updateNamePhone",
+    name: "updateNamePhone",
+    component: updateNamePhone,
+    meta: {
+      breadcrumb: "更改姓名移动端"
+    }
+  },
+  {
+    path: "/phone/personalPhone",
+    name: "personalPhone",
+    component: personalPhone,
+    meta: {
+      breadcrumb: "程序设置移动端"
+    }
+  },
+  {
+    path: "/phone/aboutAppPhone",
+    name: "aboutAppPhone",
+    component: aboutAppPhone,
+    meta: {
+      breadcrumb: "关于程序移动端"
+    }
+  },
+  {
+    path: "/phone/helpCenterPhone",
+    name: "helpCenterPhone",
+    component: helpCenterPhone,
+    meta: {
+      breadcrumb: "帮助中心移动端"
+    }
+  },
+  {
+    path: "/phone/toTeachPhone",
+    name: "toTeachPhone",
+    component: toTeachPhone,
+    meta: {
+      breadcrumb: "如何上课移动端"
+    }
+  },
+  {
+    path: "/phone/evaluatePhone",
+    name: "evaluatePhone",
+    component: evaluatePhone,
+    meta: {
+      breadcrumb: "学生评价移动端"
+    }
+  },
+  {
+    path: "/phone/myCouponPhone",
+    name: "myCouponPhone",
+    component: myCouponPhone,
+    meta: {
+      breadcrumb: "我的优惠券移动端"
+    }
+  },
+  {
+    path: "/phone/useCouponPhone",
+    name: "useCouponPhone",
+    component: useCouponPhone,
+    meta: {
+      breadcrumb: "使用优惠券移动端"
+    }
+  },
+  {
+    path: "/phone/standardCurriculumListPhone",
+    name: "standardCurriculumListPhone",
+    component: standardCurriculumListPhone,
+    meta: {
+      keepalive: true,
+      breadcrumb: "标准版手机端课程页面"
+    }
+  },
+  {
+    path: "/phone/phoneNewSchedule",
+    name: "phoneNewSchedule",
+    component: phoneNewSchedule,
+    meta: {
+      keepalive: true,
+      breadcrumb: "标准版手机端新课表"
+    }
+  },
+  {
+    path: "/phone/accessCode",
+    name: "accessCode",
+    component: accessCode,
+    meta: {
+      breadcrumb: "登录后修改密码验证码验证"
+    }
+  },
+  {
+    path: "/phone/changePassword",
+    name: "changePassword",
+    component: changePassword,
+    meta: {
+      breadcrumb: "修改密码"
+    }
+  },
+  {
+    path: "/phone/retrievePassword",
+    name: "retrievePassword",
+    component: retrievePassword,
+    meta: {
+      breadcrumb: "登录前修改密码验证码验证"
+    }
+  },
+  {
+    path: "/phone/logisticsInfo",
+    name: "logisticsInfo",
+    component: logisticsInfo,
+    meta: {
+      breadcrumb: "物流信息"
+    }
+  },
+  {
+    path: "/phone/settingPhone",
+    name: "settingPhone",
+    component: settingPhone,
+    meta: {
+      breadcrumb: "个人信息设置移动端"
+    }
   }
 ];
 
+const reportMap = [
+  {
+    path: "/report/report",
+    name: "report",
+    component: report,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "report"
+    }
+  },
+  {
+    path: "/report/evaluationAfter",
+    name: "evaluationAfter",
+    component: evaluationAfter,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "evaluationAfter"
+    }
+  },
+  {
+    path: "/report/teacherPreview",
+    name: "teacherPreview",
+    component: teacherPreview,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "teacherPreview"
+    }
+  },
+  {
+    path: "/report/preview",
+    name: "preview",
+    component: preview,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "preview"
+    }
+  },
+  {
+    path: "/report/homework",
+    name: "homework",
+    component: homework,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "homework"
+    }
+  },
+  {
+    path: "/report/practiceReport",
+    name: "practiceReport",
+    component: practiceReport,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "practiceReport"
+    }
+  },
+  {
+    path: "/report/homeworkDetail",
+    name: "homeworkDetail",
+    component: homeworkDetail,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "homeworkDetail"
+    }
+  },
+  {
+    path: "/report/imgPreview",
+    name: "imgPreview",
+    component: imgPreview,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "imgPreview"
+    }
+  },
+  {
+    path: "/report/learningReport",
+    name: "learningReport",
+    component: learningReport,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "learningReport"
+    }
+  }
+];
 // const signRouterMap = [
 //   {
 //     path: "/sign",
@@ -3082,7 +3583,8 @@ export function createRouter() {
       // ...ipadFromRouterMap,
       // ...homeRouterMap,
       ...listRouterMap,
-      ...phoneMap
+      ...phoneMap,
+      ...reportMap
       // ...courseRouterMap,
       // ...myRouterMap,
       // ...setRouterMap,
