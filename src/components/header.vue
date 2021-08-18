@@ -1,7 +1,7 @@
 <template>
   <div class="head">
     <div class="new_header" :class="!isMobile ? 'pc_box' : ''">
-      <div v-if="!hideBack" class="back" @click="toBack">
+      <div v-show="!hideBack" class="back" @click="toBack">
         <img src="../assets/img/ic_back.png" />
       </div>
       <div class="left"></div>
