@@ -187,7 +187,6 @@ export default {
     [Popup.name]: Popup,
     [Toast.name]: Toast
   },
-  layout: "mainLayout",
   data() {
     return {
       isDevice: isDevice(),

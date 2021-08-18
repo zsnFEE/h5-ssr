@@ -15,37 +15,10 @@ const listRouterMap = [
   {
     path: "/pc/Studentschedules",
     name: "pc-Studentschedules",
-    component: Studentschedules
-    // hidden: true
-    // path: "/",
-    // name: "secondList",
-    // component: secondList,
-    // hidden: true
-
-    // children: [
-    //   {
-    //     path: "secondList",
-    //     name: "secondList",
-    //     component: r =>
-    //       require.ensure(
-    //         [],
-    //         () =>
-    //           r(
-    //             require(/* webpackChunkName: "list" */ "./views/list/secondList.vue")
-    //           ),
-    //         "secondList"
-    //       ),
-
-    //     meta: {
-    //       breadcrumb: "二阶列表"
-    //     }
-    //   }
-    // ]
-  },
-  {
-    path: "/list/secondList",
-    name: "secondList",
-    component: secondList
+    component: Studentschedules,
+    meta: {
+      breadcrumb: "报名成功1"
+    }
   }
 ];
 const loginMap = [
