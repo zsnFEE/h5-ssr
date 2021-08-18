@@ -19,7 +19,6 @@ export default {
     ScheduleDate,
     PcScheduleDate
   },
-  // layout: "mainLayout",
   data() {
     return {
       list: [],
@@ -56,30 +55,18 @@ export default {
         this.titleIndex = titleNum;
       }
     }
-    // let that = this;
-    // dsBridge.registerAsyn("RefreshData", function(arg1, arg2, arg3) {
-    //   that.refreshData();
-    // });
-    // window["recvMessage"] = msg => {
-    //   this.refreshData();
-    // };
   },
   mounted() {
-    // window["recvMessage"] = msg => {
-    //   if (!this.flag) {
-    //     this.$refs.pcSchedule.refresh();
-    //   } else {
-    //     this.$refs.moblieSchedule.refresh();
-    //   }
-    // };
-    this.getLive();
-    myRecordClassList({}).then(res => {
-      if (res.code == 0) {
-        this.recordingClassList = res.data.list;
-      } else {
-        this.$toast(res.msg || res.message);
-      }
-    });
+    if (process.browser) {
+      this.getLive();
+      myRecordClassList({}).then(res => {
+        if (res.code == 0) {
+          this.recordingClassList = res.data.list;
+        } else {
+          this.$toast(res.msg || res.message);
+        }
+      });
+    }
   },
 
   methods: {

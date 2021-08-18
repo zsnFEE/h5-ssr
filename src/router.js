@@ -41,6 +41,11 @@ const listRouterMap = [
     //     }
     //   }
     // ]
+  },
+  {
+    path: "/list/secondList",
+    name: "secondList",
+    component: secondList
   }
 ];
 const loginMap = [
@@ -53,169 +58,176 @@ const loginMap = [
 const phoneMap = [
   {
     path: "/phone/myInfoPhone",
-    name: "myInfoPhone",
+    name: "phone-myInfoPhone",
     component: myInfoPhone
   }
 ];
 
-// const signRouterMap = [
-//   {
-//     path: "/sign",
-//     redirect: "/sign/signUp",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "signUp",
-//         name: "signUp",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "signUp" */ "./views/sign/signUp.vue")
-//               ),
-//             "signUp"
-//           ),
-
-//         meta: {
-//           breadcrumb: "报名成功1"
-//         }
-//       },
-//       {
-//         path: "signUpCanvas",
-//         name: "signUpCanvas",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "signUpCanvas" */ "./views/sign/signUpCanvas.vue")
-//               ),
-//             "signUpCanvas"
-//           ),
-
-//         meta: {
-//           keepalive: false,
-//           breadcrumb: "报名成功2"
-//         }
-//       }
-//     ]
-//   }
-// ];
-// const homeRouterMap = [
-//   {
-//     path: "/",
-//     redirect: "/home",
-//     // name: "home",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "home",
-//         name: "home",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/home.vue")
-//               ),
-//             "home"
-//           ),
-
-//         meta: {
-//           breadcrumb: "首页"
-//         }
-//       },
-//       {
-//         path: "tab",
-//         name: "tab",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(require(/* webpackChunkName: "tab" */ "./views/home/tab.vue")),
-//             "tab"
-//           ),
-
-//         meta: {
-//           noRefresh: true,
-//           breadcrumb: "tab"
-//         }
-//       },
-//       {
-//         path: "player",
-//         name: "player",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "player" */ "./views/home/player.vue")
-//               ),
-//             "player"
-//           ),
-
-//         meta: {
-//           breadcrumb: "播放"
-//         }
-//       },
-//       {
-//         path: "landingPage",
-//         name: "landingPage",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/landingPage.vue")
-//               ),
-//             "landingPage"
-//           ),
-
-//         meta: {
-//           keepalive: false,
-//           breadcrumb: "落地页面"
-//         }
-//       },
-//       {
-//         path: "selectCourseType",
-//         name: "selectCourseType",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/selectCourseType.vue")
-//               ),
-//             "selectCourseType"
-//           ),
-
-//         meta: {
-//           breadcrumb: "选择课程类型"
-//         }
-//       },
-//       {
-//         path: "lp",
-//         name: "landingPagePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/landingPagePhone.vue")
-//               ),
-//             "landingPagePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "购买课程"
-//         }
-//       }
-//     ]
-//   }
-// ];
+const signRouterMap = [
+  // {
+  //   path: "/sign/signUp",
+  //   name: "sign-signUp",
+  //   component: signUp
+  // },
+  // {
+  //   path: "/sign/signUpCanvas",
+  //   name: "sign-signUpCanvas",
+  //   component: signUpCanvas
+  // }
+  // {
+  //   path: "/sign",
+  //   redirect: "/sign/signUp",
+  //   component: mainLayout,
+  //   hidden: true,
+  //   children: [
+  //     {
+  //       path: "signUp",
+  //       name: "signUp",
+  //       component: r =>
+  //         require.ensure(
+  //           [],
+  //           () =>
+  //             r(
+  //               require(/* webpackChunkName: "signUp" */ "./views/sign/signUp.vue")
+  //             ),
+  //           "signUp"
+  //         ),
+  //       meta: {
+  //         breadcrumb: "报名成功1"
+  //       }
+  //     },
+  //     {
+  //       path: "signUpCanvas",
+  //       name: "signUpCanvas",
+  //       component: r =>
+  //         require.ensure(
+  //           [],
+  //           () =>
+  //             r(
+  //               require(/* webpackChunkName: "signUpCanvas" */ "./views/sign/signUpCanvas.vue")
+  //             ),
+  //           "signUpCanvas"
+  //         ),
+  //       meta: {
+  //         keepalive: false,
+  //         breadcrumb: "报名成功2"
+  //       }
+  //     }
+  //   ]
+  // }
+];
+const homeRouterMap = [
+  // {
+  //   path: "/home/home",
+  //   name: "home-home",
+  //   component: "home/home"
+  // }
+  // {
+  //   path: "/",
+  //   redirect: "/home",
+  //   // name: "home",
+  //   component: mainLayout,
+  //   hidden: true,
+  //   children: [
+  //     {
+  //       path: "home",
+  //       name: "home",
+  //       component: r =>
+  //         require.ensure(
+  //           [],
+  //           () =>
+  //             r(
+  //               require(/* webpackChunkName: "home" */ "./views/home/home.vue")
+  //             ),
+  //           "home"
+  //         ),
+  //       meta: {
+  //         breadcrumb: "首页"
+  //       }
+  //     },
+  //     {
+  //       path: "tab",
+  //       name: "tab",
+  //       component: r =>
+  //         require.ensure(
+  //           [],
+  //           () =>
+  //             r(require(/* webpackChunkName: "tab" */ "./views/home/tab.vue")),
+  //           "tab"
+  //         ),
+  //       meta: {
+  //         noRefresh: true,
+  //         breadcrumb: "tab"
+  //       }
+  //     },
+  //     {
+  //       path: "player",
+  //       name: "player",
+  //       component: r =>
+  //         require.ensure(
+  //           [],
+  //           () =>
+  //             r(
+  //               require(/* webpackChunkName: "player" */ "./views/home/player.vue")
+  //             ),
+  //           "player"
+  //         ),
+  //       meta: {
+  //         breadcrumb: "播放"
+  //       }
+  //     },
+  //     {
+  //       path: "landingPage",
+  //       name: "landingPage",
+  //       component: r =>
+  //         require.ensure(
+  //           [],
+  //           () =>
+  //             r(
+  //               require(/* webpackChunkName: "home" */ "./views/home/landingPage.vue")
+  //             ),
+  //           "landingPage"
+  //         ),
+  //       meta: {
+  //         keepalive: false,
+  //         breadcrumb: "落地页面"
+  //       }
+  //     },
+  //     {
+  //       path: "selectCourseType",
+  //       name: "selectCourseType",
+  //       component: r =>
+  //         require.ensure(
+  //           [],
+  //           () =>
+  //             r(
+  //               require(/* webpackChunkName: "home" */ "./views/home/selectCourseType.vue")
+  //             ),
+  //           "selectCourseType"
+  //         ),
+  //       meta: {
+  //         breadcrumb: "选择课程类型"
+  //       }
+  //     },
+  //     {
+  //       path: "lp",
+  //       name: "landingPagePhone",
+  //       component: r =>
+  //         require.ensure(
+  //           [],
+  //           () =>
+  //             r(
+  //               require(/* webpackChunkName: "home" */ "./views/home/landingPagePhone.vue")
+  //             ),
+  //           "landingPagePhone"
+  //         ),
+  //       meta: {
+  //         breadcrumb: "购买课程"
+  //       }
+  //     }
+  //   ]
+  // }
+];
 
 // const courseRouterMap = [
 //   {
@@ -3102,14 +3114,14 @@ export function createRouter() {
       // ...phoneRouterMap,
       // ...currRouterMap,
       // ...ipadFromRouterMap,
-      // ...homeRouterMap,
+      ...homeRouterMap,
       ...listRouterMap,
-      ...phoneMap
+      ...phoneMap,
       // ...courseRouterMap,
       // ...myRouterMap,
       // ...setRouterMap,
       // ...fileRouterMap,
-      // ...signRouterMap,
+      ...signRouterMap
       // ...orderRouterMap,
       // ...answerRouterMap,
       // ...rosterRouterMap,
