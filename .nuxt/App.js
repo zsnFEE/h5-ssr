@@ -14,11 +14,11 @@ import '..\\node_modules\\_vant@2.12.25@vant\\lib\\index.css'
 
 import '..\\node_modules\\_element-ui@2.15.5@element-ui\\lib\\theme-chalk\\index.css'
 
+import _6f6c098b from '..\\src\\layouts\\default.vue'
 import _33b48eb9 from '..\\src\\layouts\\mainLayout.vue'
 import _4d216c68 from '..\\src\\layouts\\webLayout.vue'
-import _6f6c098b from './layouts/default.vue'
 
-const layouts = { "_mainLayout": sanitizeComponent(_33b48eb9),"_webLayout": sanitizeComponent(_4d216c68),"_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_mainLayout": sanitizeComponent(_33b48eb9),"_webLayout": sanitizeComponent(_4d216c68) }
 
 export default {
   render (h, props) {

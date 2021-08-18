@@ -101,6 +101,12 @@
   "VideoPackage": {
     "description": "Auto imported from components/videoPackage.vue"
   },
+  "ReportStudentPim": {
+    "description": "Auto imported from components/report/studentPim.vue"
+  },
+  "ReportTeacherComments": {
+    "description": "Auto imported from components/report/teacherComments.vue"
+  },
   "PcList": {
     "description": "Auto imported from components/pc/list.vue"
   },
@@ -109,11 +115,5 @@
   },
   "Toast": {
     "description": "Auto imported from components/toast/index.js"
-  },
-  "ReportStudentPim": {
-    "description": "Auto imported from components/report/studentPim.vue"
-  },
-  "ReportTeacherComments": {
-    "description": "Auto imported from components/report/teacherComments.vue"
   }
 }

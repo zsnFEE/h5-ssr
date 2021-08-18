@@ -14,7 +14,6 @@ let router;
 AJAX.interceptors.request.use(
   function(config) {
     router = vue.$router;
-    console.log(router);
     let token;
     if (router.history.current.query.token) {
       config.headers["X-AccessToken"] = router.history.current.query.token;

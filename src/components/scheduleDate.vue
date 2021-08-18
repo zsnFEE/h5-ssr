@@ -1,6 +1,5 @@
 <template>
   <div class="dateBar">
-    <!-- <client-only> -->
     <div class="header">
       <div class="title">
         <div class="dataTitle">
@@ -213,7 +212,6 @@
       />
     </van-popup>
     <!--结束-->
-    <!-- </client-only> -->
   </div>
 </template>
 <script>
@@ -225,7 +223,7 @@ import {
   getMyLiveClassStatus,
   getMyTopicReport
 } from "../api/common";
-import ClassButton from "../components/classButton";
+
 import { isMobile } from "../common/util";
 
 export default {
@@ -234,8 +232,7 @@ export default {
   components: {
     [DatetimePicker.name]: DatetimePicker,
     [Popup.name]: Popup,
-    [Picker.name]: Picker,
-    ClassButton
+    [Picker.name]: Picker
   },
   data() {
     return {
