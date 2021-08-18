@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import curriculumList from "./views/pc/curriculumList.vue";
+import pccurriculumList from "./views/pc/curriculumList.vue";
 import secondList from "./views/list/secondList.vue";
 import Studentschedules from "./views/pc/Studentschedules.vue";
 import pcLogin from "./views/pc/Login.vue";
@@ -116,6 +116,8 @@ import homework from "./views/report/homework.vue";
 import practiceReport from "./views/report/practiceReport.vue";
 import homeworkDetail from "./views/report/homeworkDetail.vue";
 import imgPreview from "./views/report/imgPreview.vue";
+import playCourse from "./views/course/playCourse.vue";
+import curriculumList from "./views/curriculum/curriculumList.vue";
 
 Vue.use(VueRouter);
 
@@ -648,197 +650,21 @@ const reportMap = [
     }
   }
 ];
-// const signRouterMap = [
-//   {
-//     path: "/sign",
-//     redirect: "/sign/signUp",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "signUp",
-//         name: "signUp",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "signUp" */ "./views/sign/signUp.vue")
-//               ),
-//             "signUp"
-//           ),
-
-//         meta: {
-//           breadcrumb: "报名成功1"
-//         }
-//       },
-//       {
-//         path: "signUpCanvas",
-//         name: "signUpCanvas",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "signUpCanvas" */ "./views/sign/signUpCanvas.vue")
-//               ),
-//             "signUpCanvas"
-//           ),
-
-//         meta: {
-//           keepalive: false,
-//           breadcrumb: "报名成功2"
-//         }
-//       }
-//     ]
-//   }
-// ];
-// const homeRouterMap = [
-//   {
-//     path: "/",
-//     redirect: "/home",
-//     // name: "home",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "home",
-//         name: "home",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/home.vue")
-//               ),
-//             "home"
-//           ),
-
-//         meta: {
-//           breadcrumb: "首页"
-//         }
-//       },
-//       {
-//         path: "tab",
-//         name: "tab",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(require(/* webpackChunkName: "tab" */ "./views/home/tab.vue")),
-//             "tab"
-//           ),
-
-//         meta: {
-//           noRefresh: true,
-//           breadcrumb: "tab"
-//         }
-//       },
-//       {
-//         path: "player",
-//         name: "player",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "player" */ "./views/home/player.vue")
-//               ),
-//             "player"
-//           ),
-
-//         meta: {
-//           breadcrumb: "播放"
-//         }
-//       },
-//       {
-//         path: "landingPage",
-//         name: "landingPage",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/landingPage.vue")
-//               ),
-//             "landingPage"
-//           ),
-
-//         meta: {
-//           keepalive: false,
-//           breadcrumb: "落地页面"
-//         }
-//       },
-//       {
-//         path: "selectCourseType",
-//         name: "selectCourseType",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/selectCourseType.vue")
-//               ),
-//             "selectCourseType"
-//           ),
-
-//         meta: {
-//           breadcrumb: "选择课程类型"
-//         }
-//       },
-//       {
-//         path: "lp",
-//         name: "landingPagePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/landingPagePhone.vue")
-//               ),
-//             "landingPagePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "购买课程"
-//         }
-//       }
-//     ]
-//   }
-// ];
-
-// const courseRouterMap = [
-//   {
-//     path: "/course",
-//     redirect: "/course/playCourse",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "playCourse",
-//         name: "playCourse",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "playCourse" */ "./views/course/playCourse.vue")
-//               ),
-//             "playCourse"
-//           ),
-
-//         meta: {
-//           breadcrumb: "播放页"
-//         }
-//       }
-//     ]
-//   }
-// ];
+const courseRouterMap = [
+  {
+    path: "/course/playCourse",
+    name: "course-playCourse",
+    component: playCourse,
+    meta: {
+      breadcrumb: "播放页"
+    }
+  }
+];
 const classRouterMap = [
   {
     path: "/pc/curriculumList",
     name: "pc-curriculumList",
-    component: curriculumList,
+    component: pccurriculumList,
     meta: {
       breadcrumb: "我的课程"
     }
@@ -1228,33 +1054,16 @@ const classRouterMap = [
     }
   }
 ];
-// const currRouterMap = [
-//   {
-//     path: "/curriculum",
-//     redirect: "/curriculum",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "curriculumList",
-//         name: "curriculumList",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "curriculumList" */ "./views/curriculum/curriculumList.vue")
-//               ),
-//             "curriculumList"
-//           ),
-
-//         meta: {
-//           breadcrumb: "我的课程"
-//         }
-//       }
-//     ]
-//   }
-// ];
+const currRouterMap = [
+  {
+    path: "/curriculum/curriculumList",
+    name: "curriculum-curriculumList",
+    component: curriculumList,
+    meta: {
+      breadcrumb: "我的课程"
+    }
+  }
+];
 // const myRouterMap = [
 //   {
 //     path: "/my",
@@ -3222,13 +3031,13 @@ export function createRouter() {
       ...classRouterMap,
       // ...ipadRouterMap,
       // ...phoneRouterMap,
-      // ...currRouterMap,
+      ...currRouterMap,
       // ...ipadFromRouterMap,
       ...homeRouterMap,
       ...listRouterMap,
       ...phoneMap,
-      ...reportMap
-      // ...courseRouterMap,
+      ...reportMap,
+      ...courseRouterMap
       // ...myRouterMap,
       // ...setRouterMap,
       // ...fileRouterMap,
