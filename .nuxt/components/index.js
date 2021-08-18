@@ -1,41 +1,41 @@
 import { wrapFunctional } from './utils'
 
-export const Institutions = import('../../src/components/Institutions.vue' /* webpackChunkName: "components/institutions" */).then(c => wrapFunctional(c.default || c))
-export const BroadcastSchedule = import('../../src/components/broadcastSchedule.vue' /* webpackChunkName: "components/broadcast-schedule" */).then(c => wrapFunctional(c.default || c))
-export const Card = import('../../src/components/card.vue' /* webpackChunkName: "components/card" */).then(c => wrapFunctional(c.default || c))
-export const CardDemoPhone = import('../../src/components/cardDemoPhone.vue' /* webpackChunkName: "components/card-demo-phone" */).then(c => wrapFunctional(c.default || c))
-export const CardIpad = import('../../src/components/cardIpad.vue' /* webpackChunkName: "components/card-ipad" */).then(c => wrapFunctional(c.default || c))
-export const CardOrder = import('../../src/components/cardOrder.vue' /* webpackChunkName: "components/card-order" */).then(c => wrapFunctional(c.default || c))
-export const CardPhone = import('../../src/components/cardPhone.vue' /* webpackChunkName: "components/card-phone" */).then(c => wrapFunctional(c.default || c))
-export const CardPrice = import('../../src/components/cardPrice.vue' /* webpackChunkName: "components/card-price" */).then(c => wrapFunctional(c.default || c))
-export const Catalog = import('../../src/components/catalog.vue' /* webpackChunkName: "components/catalog" */).then(c => wrapFunctional(c.default || c))
-export const ClassButton = import('../../src/components/classButton.vue' /* webpackChunkName: "components/class-button" */).then(c => wrapFunctional(c.default || c))
-export const ClassTab = import('../../src/components/classTab.vue' /* webpackChunkName: "components/class-tab" */).then(c => wrapFunctional(c.default || c))
-export const CommetDialog = import('../../src/components/commetDialog.vue' /* webpackChunkName: "components/commet-dialog" */).then(c => wrapFunctional(c.default || c))
-export const Coupon = import('../../src/components/coupon.vue' /* webpackChunkName: "components/coupon" */).then(c => wrapFunctional(c.default || c))
-export const DateTimeTab = import('../../src/components/dateTimeTab.vue' /* webpackChunkName: "components/date-time-tab" */).then(c => wrapFunctional(c.default || c))
-export const Details = import('../../src/components/details.vue' /* webpackChunkName: "components/details" */).then(c => wrapFunctional(c.default || c))
-export const Header = import('../../src/components/header.vue' /* webpackChunkName: "components/header" */).then(c => wrapFunctional(c.default || c))
-export const Headerweb = import('../../src/components/headerweb.vue' /* webpackChunkName: "components/headerweb" */).then(c => wrapFunctional(c.default || c))
-export const Homework = import('../../src/components/homework.vue' /* webpackChunkName: "components/homework" */).then(c => wrapFunctional(c.default || c))
-export const Logistics = import('../../src/components/logistics.vue' /* webpackChunkName: "components/logistics" */).then(c => wrapFunctional(c.default || c))
-export const Navigation = import('../../src/components/navigation.vue' /* webpackChunkName: "components/navigation" */).then(c => wrapFunctional(c.default || c))
-export const NewCard = import('../../src/components/newCard.vue' /* webpackChunkName: "components/new-card" */).then(c => wrapFunctional(c.default || c))
-export const OrderDetail = import('../../src/components/orderDetail.vue' /* webpackChunkName: "components/order-detail" */).then(c => wrapFunctional(c.default || c))
-export const Personage = import('../../src/components/personage.vue' /* webpackChunkName: "components/personage" */).then(c => wrapFunctional(c.default || c))
-export const RecordedSchedule = import('../../src/components/recordedSchedule.vue' /* webpackChunkName: "components/recorded-schedule" */).then(c => wrapFunctional(c.default || c))
-export const ScheduleDate = import('../../src/components/scheduleDate.vue' /* webpackChunkName: "components/schedule-date" */).then(c => wrapFunctional(c.default || c))
-export const StandardMyInfoPhone = import('../../src/components/standardMyInfoPhone.vue' /* webpackChunkName: "components/standard-my-info-phone" */).then(c => wrapFunctional(c.default || c))
-export const Statistics = import('../../src/components/statistics.vue' /* webpackChunkName: "components/statistics" */).then(c => wrapFunctional(c.default || c))
-export const StudentNotes = import('../../src/components/studentNotes.vue' /* webpackChunkName: "components/student-notes" */).then(c => wrapFunctional(c.default || c))
-export const TeacherNotes = import('../../src/components/teacherNotes.vue' /* webpackChunkName: "components/teacher-notes" */).then(c => wrapFunctional(c.default || c))
-export const TestTable = import('../../src/components/testTable.vue' /* webpackChunkName: "components/test-table" */).then(c => wrapFunctional(c.default || c))
-export const TimeBar = import('../../src/components/timeBar.vue' /* webpackChunkName: "components/time-bar" */).then(c => wrapFunctional(c.default || c))
-export const TodayCard = import('../../src/components/todayCard.vue' /* webpackChunkName: "components/today-card" */).then(c => wrapFunctional(c.default || c))
-export const VideoClassCard = import('../../src/components/videoClassCard.vue' /* webpackChunkName: "components/video-class-card" */).then(c => wrapFunctional(c.default || c))
-export const VideoPackage = import('../../src/components/videoPackage.vue' /* webpackChunkName: "components/video-package" */).then(c => wrapFunctional(c.default || c))
-export const PcList = import('../../src/components/pc/list.vue' /* webpackChunkName: "components/pc-list" */).then(c => wrapFunctional(c.default || c))
-export const PcScheduleDate = import('../../src/components/pc/pcScheduleDate.vue' /* webpackChunkName: "components/pc-schedule-date" */).then(c => wrapFunctional(c.default || c))
-export const ReportStudentPim = import('../../src/components/report/studentPim.vue' /* webpackChunkName: "components/report-student-pim" */).then(c => wrapFunctional(c.default || c))
-export const ReportTeacherComments = import('../../src/components/report/teacherComments.vue' /* webpackChunkName: "components/report-teacher-comments" */).then(c => wrapFunctional(c.default || c))
-export const Toast = import('../../src/components/toast/index.js' /* webpackChunkName: "components/toast" */).then(c => wrapFunctional(c.default || c))
+export { default as BroadcastSchedule } from '../..\\src\\components\\broadcastSchedule.vue'
+export { default as Card } from '../..\\src\\components\\card.vue'
+export { default as CardDemoPhone } from '../..\\src\\components\\cardDemoPhone.vue'
+export { default as CardIpad } from '../..\\src\\components\\cardIpad.vue'
+export { default as CardOrder } from '../..\\src\\components\\cardOrder.vue'
+export { default as CardPhone } from '../..\\src\\components\\cardPhone.vue'
+export { default as CardPrice } from '../..\\src\\components\\cardPrice.vue'
+export { default as Catalog } from '../..\\src\\components\\catalog.vue'
+export { default as ClassButton } from '../..\\src\\components\\classButton.vue'
+export { default as ClassTab } from '../..\\src\\components\\classTab.vue'
+export { default as CommetDialog } from '../..\\src\\components\\commetDialog.vue'
+export { default as Coupon } from '../..\\src\\components\\coupon.vue'
+export { default as DateTimeTab } from '../..\\src\\components\\dateTimeTab.vue'
+export { default as Details } from '../..\\src\\components\\details.vue'
+export { default as Header } from '../..\\src\\components\\header.vue'
+export { default as Headerweb } from '../..\\src\\components\\headerweb.vue'
+export { default as Homework } from '../..\\src\\components\\homework.vue'
+export { default as Institutions } from '../..\\src\\components\\Institutions.vue'
+export { default as Logistics } from '../..\\src\\components\\logistics.vue'
+export { default as Navigation } from '../..\\src\\components\\navigation.vue'
+export { default as NewCard } from '../..\\src\\components\\newCard.vue'
+export { default as OrderDetail } from '../..\\src\\components\\orderDetail.vue'
+export { default as Personage } from '../..\\src\\components\\personage.vue'
+export { default as RecordedSchedule } from '../..\\src\\components\\recordedSchedule.vue'
+export { default as ScheduleDate } from '../..\\src\\components\\scheduleDate.vue'
+export { default as StandardMyInfoPhone } from '../..\\src\\components\\standardMyInfoPhone.vue'
+export { default as Statistics } from '../..\\src\\components\\statistics.vue'
+export { default as StudentNotes } from '../..\\src\\components\\studentNotes.vue'
+export { default as TeacherNotes } from '../..\\src\\components\\teacherNotes.vue'
+export { default as TestTable } from '../..\\src\\components\\testTable.vue'
+export { default as TimeBar } from '../..\\src\\components\\timeBar.vue'
+export { default as TodayCard } from '../..\\src\\components\\todayCard.vue'
+export { default as VideoClassCard } from '../..\\src\\components\\videoClassCard.vue'
+export { default as VideoPackage } from '../..\\src\\components\\videoPackage.vue'
+export { default as ReportStudentPim } from '../..\\src\\components\\report\\studentPim.vue'
+export { default as ReportTeacherComments } from '../..\\src\\components\\report\\teacherComments.vue'
+export { default as PcList } from '../..\\src\\components\\pc\\list.vue'
+export { default as PcScheduleDate } from '../..\\src\\components\\pc\\pcScheduleDate.vue'
+export { default as Toast } from '../..\\src\\components\\toast\\index.js'
