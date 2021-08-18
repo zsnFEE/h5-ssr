@@ -1,4 +1,5 @@
-const path = require("path"); // 需要引入
+const CompressionWebpackPlugin = require("compression-webpack-plugin");
+const productionGzipExtensions = ["js", "css"];
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -26,7 +27,11 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["@/plugins/vant", { src: "@/plugins/element-ui", ssr: true }],
+  plugins: [
+    "@/plugins/vant",
+    { src: "@/plugins/element-ui", ssr: true },
+    "@/plugins/header"
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -44,6 +49,15 @@ export default {
   build: {
     vendor: ["element-ui"],
     extractCSS: true,
+    plugins: [
+      new CompressionWebpackPlugin({
+        filename: "[path].gz[query]", // 提示compression-webpack-plugin@2.0.0的话filename改为asset
+        algorithm: "gzip",
+        test: new RegExp("\\.(" + productionGzipExtensions.join("|") + ")$"),
+        threshold: 1024, //内容超过10KB进行压缩
+        minRatio: 0.8
+      })
+    ],
     babel: {
       plugins: [
         [

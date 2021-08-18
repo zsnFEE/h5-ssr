@@ -107,13 +107,13 @@
   "PcScheduleDate": {
     "description": "Auto imported from components/pc/pcScheduleDate.vue"
   },
+  "Toast": {
+    "description": "Auto imported from components/toast/index.js"
+  },
   "ReportStudentPim": {
     "description": "Auto imported from components/report/studentPim.vue"
   },
   "ReportTeacherComments": {
     "description": "Auto imported from components/report/teacherComments.vue"
-  },
-  "Toast": {
-    "description": "Auto imported from components/toast/index.js"
   }
 }

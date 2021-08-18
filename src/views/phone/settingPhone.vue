@@ -2,7 +2,6 @@
   <div class="setting">
     <div class="backgroundColor"></div>
     <Header :title="'个人资料'" @toBack="toBack"> </Header>
-
     <body>
       <div class="messageControl ft14" @click="getAvatar">
         <span>头像</span>
