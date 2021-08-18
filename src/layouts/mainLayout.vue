@@ -42,7 +42,7 @@
 </template>
 <script>
 import { PullRefresh } from "vant";
-import { isMobile } from "../common/util";
+import { isMobile } from "../../src/common/util";
 
 export default {
   name: "mainLayout",

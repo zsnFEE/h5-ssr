@@ -229,7 +229,7 @@ import {
   getMyLiveClassStatus,
   getMyTopicReport
 } from "../api/common";
-import ClassButton from "../components/classButton";
+
 import { isMobile } from "../common/util";
 
 export default {
@@ -238,8 +238,7 @@ export default {
   components: {
     [DatetimePicker.name]: DatetimePicker,
     [Popup.name]: Popup,
-    [Picker.name]: Picker,
-    ClassButton
+    [Picker.name]: Picker
   },
   data() {
     return {
@@ -456,9 +455,11 @@ export default {
         start_date: this.dates[0].date,
         end_date: this.dates[this.dates.length - 1].date
       }).then(res => {
-        this.dates.map(item => {
-          res.data.includes(item.date) ? (item.have_schedule = 1) : "";
-        });
+        if (res.code == 0) {
+          this.dates.map(item => {
+            res.data.includes(item.date) ? (item.have_schedule = 1) : "";
+          });
+        }
       });
     },
     getFormatDate(date) {

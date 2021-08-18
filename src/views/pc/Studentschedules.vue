@@ -11,24 +11,13 @@ import { sendMessage } from "../../api/client";
 import { myLiveClassList, myRecordClassList } from "../../api/common";
 import { Toast } from "vant";
 import { isMobile } from "../../common/util";
-import RecordedSchedule from "../../components/recordedSchedule.vue";
-import BroadcastSchedule from "../../components/broadcastSchedule.vue";
-import Navigation from "../../components/navigation";
-import NewCard from "../../components/newCard.vue";
-import VideoPackage from "../../components/videoPackage";
 import ScheduleDate from "../../components/scheduleDate.vue";
 import PcScheduleDate from "../../components/pc/pcScheduleDate.vue";
-import { List } from "vant";
+
 export default {
   components: {
-    RecordedSchedule,
-    BroadcastSchedule,
-    Navigation,
-    NewCard,
-    VideoPackage,
     ScheduleDate,
-    PcScheduleDate,
-    [List.name]: List
+    PcScheduleDate
   },
   data() {
     return {
