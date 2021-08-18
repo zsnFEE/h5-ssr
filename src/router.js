@@ -3,22 +3,74 @@ import VueRouter from "vue-router";
 import mainLayout from "./layouts/mainLayout.vue";
 import webLayout from "./layouts/webLayout.vue";
 import standardCurriculumListPhone from "./views/phone/standardCurriculumListPhone.vue";
-import curriculumList from "./views/pc/curriculumList.vue";
 import secondList from "./views/list/secondList.vue";
 import Studentschedules from "./views/pc/Studentschedules.vue";
 import myInfoPhone from "./views/phone/myInfoPhone.vue";
 import pcLogin from "./views/pc/Login.vue";
+import signUp from "./views/sign/signUp.vue";
+import signUpCanvas from "./views/sign/signUpCanvas.vue";
+import home from "./views/home/home.vue";
+import tab from "./views/home/tab.vue";
+import player from "./views/home/player.vue";
+import selectCourseType from "./views/home/selectCourseType.vue";
+import landingPagePhone from "./views/home/landingPagePhone.vue";
+import landingPage from "./views/home/landingPage.vue";
+import curriculumList from "./views/pc/curriculumList.vue";
+import findPc from "./views/pc/findPc.vue";
+import orderPc from "./views/pc/orderPc.vue";
+import Myorder from "./views/pc/Myorder.vue";
+import OrderInformation from "./views/pc/OrderInformation.vue";
+import Orderdetails from "./views/pc/Orderdetails.vue";
+import Homepage from "./views/pc/Homepage.vue";
+import Me from "./views/pc/Me.vue";
+import Smallclass from "./views/pc/Smallclass.vue";
+import pcNewSchedule from "./views/pc/pcNewSchedule.vue";
+import pcSchedule from "./views/pc/pcSchedule.vue";
+import prepareLessons from "./views/pc/prepareLessons.vue";
+import pcLiveCourseUnit from "./views/pc/pcLiveCourseUnit.vue";
+import improveInfoPc from "./views/pc/improveInfoPc.vue";
+import New from "./views/pc/New.vue";
+import Orders from "./views/pc/Orders.vue";
+import Trialclass from "./views/pc/Trialclass.vue";
+import Consult from "./views/pc/Consult.vue";
+import Fillorder from "./views/pc/Fillorder.vue";
+import Shippingaddress from "./views/pc/Shippingaddress.vue";
+import Selectaddress from "./views/pc/Selectaddress.vue";
+import Signup from "./views/pc/Signup.vue";
+import Set from "./views/pc/Set.vue";
+import Personalpc from "./views/pc/Personalpc.vue";
+import RecordListpc from "./views/pc/RecordListpc.vue";
+import Middlepagepc from "./views/pc/Middlepagepc.vue";
+import Rule from "./views/pc/Rule.vue";
+import Earnings from "./views/pc/Earnings.vue";
+import Award from "./views/pc/Award.vue";
+import Withdraw from "./views/pc/Withdraw.vue";
+import Replacephone from "./views/pc/Replacephone.vue";
+import Originalphone from "./views/pc/Originalphone.vue";
+import Codephone from "./views/pc/Codephone.vue";
+import Nickname from "./views/pc/Nickname.vue";
+import policyPhone from "./views/pc/policyPhone.vue";
+import privacyPhone from "./views/pc/privacyPhone.vue";
+import Aboutapppc from "./views/pc/Aboutapppc.vue";
+import Attendclass from "./views/pc/Attendclass.vue";
+import Help from "./views/pc/Help.vue";
+import Evaluatelist from "./views/pc/Evaluatelist.vue";
+import Submit from "./views/pc/Submit.vue";
+import evaluatePc from "./views/pc/evaluatePc.vue";
+import teacherReport from "./views/pc/teacherReport.vue";
+import myCoupon from "./views/pc/myCoupon.vue";
+import Courselist from "./views/pc/Courselist.vue";
+import Login from "./views/pc/Login.vue";
+import logisticsInfo from "./views/pc/logisticsInfo.vue";
+import invitationHomePad from "./views/pc/invitationHomePad.vue";
 
 Vue.use(VueRouter);
 
 const listRouterMap = [
   {
-    path: "/pc/Studentschedules",
-    name: "pc-Studentschedules",
-    component: Studentschedules,
-    meta: {
-      breadcrumb: "报名成功1"
-    }
+    path: "/list/secondList",
+    name: "list-secondList",
+    component: secondList
   }
 ];
 const loginMap = [
@@ -37,64 +89,62 @@ const phoneMap = [
 ];
 
 const signRouterMap = [
-  // {
-  //   path: "/sign/signUp",
-  //   name: "sign-signUp",
-  //   component: signUp
-  // },
-  // {
-  //   path: "/sign/signUpCanvas",
-  //   name: "sign-signUpCanvas",
-  //   component: signUpCanvas
-  // }
-  // {
-  //   path: "/sign",
-  //   redirect: "/sign/signUp",
-  //   component: mainLayout,
-  //   hidden: true,
-  //   children: [
-  //     {
-  //       path: "signUp",
-  //       name: "signUp",
-  //       component: r =>
-  //         require.ensure(
-  //           [],
-  //           () =>
-  //             r(
-  //               require(/* webpackChunkName: "signUp" */ "./views/sign/signUp.vue")
-  //             ),
-  //           "signUp"
-  //         ),
-  //       meta: {
-  //         breadcrumb: "报名成功1"
-  //       }
-  //     },
-  //     {
-  //       path: "signUpCanvas",
-  //       name: "signUpCanvas",
-  //       component: r =>
-  //         require.ensure(
-  //           [],
-  //           () =>
-  //             r(
-  //               require(/* webpackChunkName: "signUpCanvas" */ "./views/sign/signUpCanvas.vue")
-  //             ),
-  //           "signUpCanvas"
-  //         ),
-  //       meta: {
-  //         keepalive: false,
-  //         breadcrumb: "报名成功2"
-  //       }
-  //     }
-  //   ]
-  // }
+  {
+    path: "/sign/signUp",
+    name: "sign-signUp",
+    component: signUp,
+    meta: {
+      breadcrumb: "报名成功1"
+    }
+  },
+  {
+    path: "/sign/signUpCanvas",
+    name: "sign-signUpCanvas",
+    component: signUpCanvas,
+    meta: {
+      keepalive: false,
+      breadcrumb: "报名成功2"
+    }
+  }
 ];
 const homeRouterMap = [
-  // {
-  //   path: "/home/home",
-  //   name: "home-home",
-  //   component: "home/home"
-  // }
+  {
+    path: "/home",
+    name: "home-home",
+    component: home,
+    meta: {
+      breadcrumb: "首页"
+    }
+  },
+  {
+    path: "/tab",
+    name: "home-tab",
+    component: tab,
+    meta: {
+      noRefresh: true,
+      breadcrumb: "tab"
+    }
+  },
+  {
+    path: "/player",
+    name: "home-player",
+    component: player
+  },
+  {
+    path: "/landingPage",
+    name: "home-landingPage",
+    component: landingPage
+  },
+  {
+    path: "/selectCourseType",
+    name: "home-selectCourseType",
+    component: selectCourseType
+  },
+  {
+    path: "/lp",
+    name: "home-landingPagePhone",
+    component: landingPagePhone
+  }
   // {
   //   path: "/",
   //   redirect: "/home",
@@ -229,868 +279,400 @@ const homeRouterMap = [
 //     ]
 //   }
 // ];
-// const classRouterMap = [
-//   {
-//     path: "/pc",
-//     redirect: "/pc/curriculumList",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "curriculumList",
-//         name: "curriculumList",
-//         component: curriculumList,
-
-//         // r =>
-//         //   require.ensure(
-//         //     [],
-//         //     () =>
-//         //       r(
-//         //         require(/* webpackChunkName: "curriculumList" */ "./views/pc/curriculumList.vue")
-//         //       ),
-//         //     "curriculumList"
-//         //   ),
-
-//         meta: {
-//           breadcrumb: "我的课程"
-//         }
-//       },
-//       {
-//         path: "findPc",
-//         name: "findPc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "findPc" */ "./views/pc/findPc.vue")
-//               ),
-//             "findPc"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC发现"
-//         }
-//       },
-//       {
-//         path: "orderPc",
-//         name: "orderPc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/orderPc.vue")
-//               ),
-//             "orderPc"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC订单"
-//         }
-//       },
-//       {
-//         path: "Myorder",
-//         name: "Myorder",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Myorder.vue")
-//               ),
-//             "Myorder"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC我的订单"
-//         }
-//       },
-//       {
-//         path: "OrderInformation",
-//         name: "OrderInformation",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/OrderInformation.vue")
-//               ),
-//             "OrderInformation"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC订单信息"
-//         }
-//       },
-//       {
-//         path: "Orderdetails",
-//         name: "Orderdetails",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Orderdetails.vue")
-//               ),
-//             "Orderdetails"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC订单详情"
-//         }
-//       },
-//       {
-//         path: "Homepage",
-//         name: "Homepage",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Homepage.vue")
-//               ),
-//             "Homepage"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC首页"
-//         }
-//       },
-//       {
-//         path: "Me",
-//         name: "Me",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(require(/* webpackChunkName: "orderPC" */ "./views/pc/Me.vue")),
-//             "Me"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC我的"
-//         }
-//       },
-//       {
-//         path: "Smallclass",
-//         name: "Smallclass",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Smallclass.vue")
-//               ),
-//             "Smallclass"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC小课堂"
-//         }
-//       },
-//       {
-//         path: "Studentschedules",
-//         name: "Studentschedules",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Studentschedules.vue")
-//               ),
-//             "Studentschedules"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC课表"
-//         }
-//       },
-//       {
-//         path: "pcNewSchedule",
-//         name: "pcNewSchedule",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "pcNewSchedule" */ "./views/pc/pcNewSchedule.vue")
-//               ),
-//             "pcNewSchedule"
-//           ),
-
-//         meta: {
-//           breadcrumb: "ipad新课表"
-//         }
-//       },
-//       {
-//         path: "pcSchedule",
-//         name: "pcSchedule",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "pcSchedule" */ "./views/pc/pcSchedule.vue")
-//               ),
-//             "pcSchedule"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC新课表"
-//         }
-//       },
-//       {
-//         path: "prepareLessons",
-//         name: "prepareLessons",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "prepareLessons" */ "./views/pc/prepareLessons.vue")
-//               ),
-//             "prepareLessons"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC教师备课"
-//         }
-//       },
-//       {
-//         path: "pcLiveCourseUnit",
-//         name: "pcLiveCourseUnit",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "pcLiveCourseUnit" */ "./views/pc/pcLiveCourseUnit.vue")
-//               ),
-//             "pcLiveCourseUnit"
-//           ),
-
-//         meta: {
-//           breadcrumb: "PC直播课单元"
-//         }
-//       },
-//       {
-//         path: "improveInfoPc",
-//         name: "improveInfoPc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/improveInfoPc.vue")
-//               ),
-//             "improveInfoPc"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc更换头像"
-//         }
-//       },
-//       {
-//         path: "New",
-//         name: "New",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/New.vue")
-//               ),
-//             "New"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc新的订单详情"
-//         }
-//       },
-//       {
-//         path: "Orders",
-//         name: "Orders",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Orders.vue")
-//               ),
-//             "Orders"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc新的我的订单"
-//         }
-//       },
-//       {
-//         path: "Trialclass",
-//         name: "Trialclass",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Trialclass.vue")
-//               ),
-//             "Trialclass"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc体验课"
-//         }
-//       },
-//       {
-//         path: "Consult",
-//         name: "Consult",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Consult.vue")
-//               ),
-//             "Consult"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc咨询老师"
-//         }
-//       },
-//       {
-//         path: "Fillorder",
-//         name: "Fillorder",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Fillorder.vue")
-//               ),
-//             "Fillorder"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc填写订单页面"
-//         }
-//       },
-//       {
-//         path: "Shippingaddress",
-//         name: "Shippingaddress",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Shippingaddress.vue")
-//               ),
-//             "Shippingaddress"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc填写收货地址"
-//         }
-//       },
-//       {
-//         path: "prepareLessons",
-//         name: "prepareLessons",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "prepareLessons" */ "./views/pc/prepareLessons.vue")
-//               ),
-//             "prepareLessons"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc备课"
-//         }
-//       },
-
-//       {
-//         path: "Selectaddress",
-//         name: "Selectaddress",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Selectaddress.vue")
-//               ),
-//             "Selectaddress"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc选择收货地址"
-//         }
-//       },
-//       {
-//         path: "Signup",
-//         name: "Signup",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Signup.vue")
-//               ),
-//             "Signup"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc报名成功"
-//         }
-//       },
-//       {
-//         path: "Set",
-//         name: "Set",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Set.vue")
-//               ),
-//             "Set"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc设置"
-//         }
-//       },
-//       {
-//         path: "Personalpc",
-//         name: "Personalpc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Personalpc.vue")
-//               ),
-//             "Personalpc"
-//           ),
-
-//         meta: {
-//           breadcrumb: "个人资料"
-//         }
-//       },
-//       {
-//         path: "RecordListpc",
-//         name: "RecordListpc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/RecordListpc.vue")
-//               ),
-//             "RecordListpc"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc录播列表"
-//         }
-//       },
-//       {
-//         path: "Middlepagepc",
-//         name: "Middlepagepc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Middlepagepc.vue")
-//               ),
-//             "Middlepagepc"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc微信支付的中间页"
-//         }
-//       },
-//       {
-//         path: "Rule",
-//         name: "Rule",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Rule.vue")
-//               ),
-//             "Rule"
-//           ),
-
-//         meta: {
-//           breadcrumb: "ipad 赏金规则页面"
-//         }
-//       },
-//       {
-//         path: "Earnings",
-//         name: "Earnings",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Earnings.vue")
-//               ),
-//             "Earnings"
-//           ),
-
-//         meta: {
-//           breadcrumb: "ipad 赏金收益页面"
-//         }
-//       },
-//       {
-//         path: "Award",
-//         name: "Award",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Award.vue")
-//               ),
-//             "Award"
-//           ),
-
-//         meta: {
-//           breadcrumb: "ipad 赏金奖励页面"
-//         }
-//       },
-//       {
-//         path: "Withdraw",
-//         name: "Withdraw",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Withdraw.vue")
-//               ),
-//             "Withdraw"
-//           ),
-
-//         meta: {
-//           breadcrumb: "ipad 提现页面"
-//         }
-//       },
-//       {
-//         path: "Replacephone",
-//         name: "Replacephone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Replacephone.vue")
-//               ),
-//             "Replacephone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "更换手机号页面"
-//         }
-//       },
-//       {
-//         path: "Originalphone",
-//         name: "Originalphone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Originalphone.vue")
-//               ),
-//             "Originalphone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "原手机号页面"
-//         }
-//       },
-//       {
-//         path: "Codephone",
-//         name: "Codephone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Codephone.vue")
-//               ),
-//             "Codephone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "输入验证码页面"
-//         }
-//       },
-//       {
-//         path: "Nickname",
-//         name: "Nickname",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Nickname.vue")
-//               ),
-//             "Nickname"
-//           ),
-
-//         meta: {
-//           breadcrumb: "修改昵称页面"
-//         }
-//       },
-//       {
-//         path: "policyPhone",
-//         name: "policyPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/policyPhone.vue")
-//               ),
-//             "policyPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "用户注册协议"
-//         }
-//       },
-//       {
-//         path: "privacyPhone",
-//         name: "privacyPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/privacyPhone.vue")
-//               ),
-//             "privacyPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "隐私政策"
-//         }
-//       },
-//       {
-//         path: "Aboutapppc",
-//         name: "Aboutapppc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Aboutapppc.vue")
-//               ),
-//             "Aboutapppc"
-//           ),
-
-//         meta: {
-//           breadcrumb: "关于猴猴画"
-//         }
-//       },
-//       {
-//         path: "Attendclass",
-//         name: "Attendclass",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Attendclass.vue")
-//               ),
-//             "Attendclass"
-//           ),
-
-//         meta: {
-//           breadcrumb: "如何上课"
-//         }
-//       },
-//       {
-//         path: "Help",
-//         name: "Help",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Help.vue")
-//               ),
-//             "Help"
-//           ),
-
-//         meta: {
-//           breadcrumb: "帮助中心"
-//         }
-//       },
-//       {
-//         path: "Evaluatelist",
-//         name: "Evaluatelist",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Evaluatelist.vue")
-//               ),
-//             "Evaluatelist"
-//           ),
-
-//         meta: {
-//           breadcrumb: "评价列表"
-//         }
-//       },
-//       {
-//         path: "Submit",
-//         name: "Submit",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/Submit.vue")
-//               ),
-//             "Submit"
-//           ),
-
-//         meta: {
-//           breadcrumb: "提交评价"
-//         }
-//       },
-//       {
-//         path: "evaluatePc",
-//         name: "evaluatePc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/evaluatePc.vue")
-//               ),
-//             "evaluatePc"
-//           ),
-
-//         meta: {
-//           breadcrumb: "学生评价"
-//         }
-//       },
-//       {
-//         path: "teacherReport",
-//         name: "teacherReport",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "teacherReport" */ "./views/pc/teacherReport.vue")
-//               ),
-//             "teacherReport"
-//           ),
-
-//         meta: {
-//           breadcrumb: "教师课堂报告"
-//         }
-//       },
-//       {
-//         path: "myCoupon",
-//         name: "myCoupon",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPC" */ "./views/pc/myCoupon.vue")
-//               ),
-//             "myCoupon"
-//           ),
-
-//         meta: {
-//           breadcrumb: "我的优惠券"
-//         }
-//       },
-
-//       {
-//         path: "Courselist",
-//         name: "Courselist",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "Courselist" */ "./views/pc/Courselist.vue")
-//               ),
-//             "Courselist"
-//           ),
-
-//         meta: {
-//           breadcrumb: "pc更多的页面"
-//         }
-//       },
-//       {
-//         path: "Login",
-//         name: "Login",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "Login" */ "./views/pc/Login.vue")
-//               ),
-//             "Login"
-//           ),
-
-//         meta: {
-//           breadcrumb: "登录web端"
-//         }
-//       },
-//       {
-//         path: "logisticsInfo",
-//         name: "logisticsInfo",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "logisticsInfo" */ "./views/pc/logisticsInfo.vue")
-//               ),
-//             "logisticsInfo"
-//           ),
-
-//         meta: {
-//           breadcrumb: "物流信息"
-//         }
-//       },
-//       {
-//         path: "invitationHomePad",
-//         name: "invitationHomePad",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "invitationHomePad" */ "./views/pc/invitationHomePad.vue")
-//               ),
-//             "invitationHomePad"
-//           ),
-
-//         meta: {
-//           breadcrumb: "分销首页pad端"
-//         }
-//       }
-//     ]
-//   }
-// ];
+const classRouterMap = [
+  {
+    path: "/pc/curriculumList",
+    name: "pc-curriculumList",
+    component: curriculumList,
+    meta: {
+      breadcrumb: "我的课程"
+    }
+  },
+  {
+    path: "/pc/findPc",
+    name: "pc-findPc",
+    component: findPc,
+    meta: {
+      breadcrumb: "PC发现"
+    }
+  },
+  {
+    path: "/pc/orderPc",
+    name: "pc-orderPc",
+    component: orderPc,
+    meta: {
+      breadcrumb: "PC订单"
+    }
+  },
+  {
+    path: "/pc/Myorder",
+    name: "pc-Myorder",
+    component: Myorder,
+    meta: {
+      breadcrumb: "PC我的订单"
+    }
+  },
+  {
+    path: "/pc/OrderInformation",
+    name: "pc-OrderInformation",
+    component: OrderInformation,
+    meta: {
+      breadcrumb: "PC订单信息"
+    }
+  },
+  {
+    path: "/pc/Orderdetails",
+    name: "pc-Orderdetails",
+    component: Orderdetails,
+    meta: {
+      breadcrumb: "PC订单详情"
+    }
+  },
+  {
+    path: "/pc/Homepage",
+    name: "pc-Homepage",
+    component: Homepage,
+    meta: {
+      breadcrumb: "PC首页"
+    }
+  },
+  {
+    path: "/pc/Me",
+    name: "pc-Me",
+    component: Me,
+    meta: {
+      breadcrumb: "PC我的"
+    }
+  },
+  {
+    path: "/pc/Smallclass",
+    name: "pc-Smallclass",
+    component: Smallclass,
+    meta: {
+      breadcrumb: "PC小课堂"
+    }
+  },
+  {
+    path: "/pc/Studentschedules",
+    name: "pc-Studentschedules",
+    component: Studentschedules,
+    meta: {
+      breadcrumb: "PC课表"
+    }
+  },
+  {
+    path: "/pc/pcNewSchedule",
+    name: "pc-pcNewSchedule",
+    component: pcNewSchedule,
+    meta: {
+      breadcrumb: "ipad新课表"
+    }
+  },
+  {
+    path: "/pc/pcSchedule",
+    name: "pc-pcSchedule",
+    component: pcSchedule,
+    meta: {
+      breadcrumb: "PC新课表"
+    }
+  },
+  {
+    path: "/pc/prepareLessons",
+    name: "pc-prepareLessons",
+    component: prepareLessons,
+    meta: {
+      breadcrumb: "PC教师备课"
+    }
+  },
+  {
+    path: "/pc/pcLiveCourseUnit",
+    name: "pc-pcLiveCourseUnit",
+    component: pcLiveCourseUnit,
+    meta: {
+      breadcrumb: "PC直播课单元"
+    }
+  },
+  {
+    path: "/pc/improveInfoPc",
+    name: "pc-improveInfoPc",
+    component: improveInfoPc,
+    meta: {
+      breadcrumb: "pc更换头像"
+    }
+  },
+  {
+    path: "/pc/New",
+    name: "pc-New",
+    component: New,
+    meta: {
+      breadcrumb: "pc新的订单详情"
+    }
+  },
+  {
+    path: "/pc/Orders",
+    name: "pc-Orders",
+    component: Orders,
+    meta: {
+      breadcrumb: "pc新的我的订单"
+    }
+  },
+  {
+    path: "/pc/Trialclass",
+    name: "pc-Trialclass",
+    component: Trialclass,
+    meta: {
+      breadcrumb: "pc体验课"
+    }
+  },
+  {
+    path: "/pc/Consult",
+    name: "pc-Consult",
+    component: Consult,
+    meta: {
+      breadcrumb: "pc咨询老师"
+    }
+  },
+  {
+    path: "/pc/Fillorder",
+    name: "pc-Fillorder",
+    component: Fillorder,
+    meta: {
+      breadcrumb: "pc填写订单页面"
+    }
+  },
+  {
+    path: "/pc/Shippingaddress",
+    name: "pc-Shippingaddress",
+    component: Shippingaddress,
+    meta: {
+      breadcrumb: "pc填写收货地址"
+    }
+  },
+  {
+    path: "/pc/Selectaddress",
+    name: "pc-Selectaddress",
+    component: Selectaddress,
+    meta: {
+      breadcrumb: "pc选择收货地址"
+    }
+  },
+  {
+    path: "/pc/Signup",
+    name: "pc-Signup",
+    component: Signup,
+    meta: {
+      breadcrumb: "pc报名成功"
+    }
+  },
+  {
+    path: "/pc/Set",
+    name: "pc-Set",
+    component: Set,
+    meta: {
+      breadcrumb: "pc设置"
+    }
+  },
+  {
+    path: "/pc/Personalpc",
+    name: "pc-Personalpc",
+    component: Personalpc,
+    meta: {
+      breadcrumb: "个人资料"
+    }
+  },
+  {
+    path: "/pc/RecordListpc",
+    name: "pc-RecordListpc",
+    component: RecordListpc,
+    meta: {
+      breadcrumb: "pc录播列表"
+    }
+  },
+  {
+    path: "/pc/Middlepagepc",
+    name: "pc-Middlepagepc",
+    component: Middlepagepc,
+    meta: {
+      breadcrumb: "pc微信支付的中间页"
+    }
+  },
+  {
+    path: "/pc/Rule",
+    name: "pc-Rule",
+    component: Rule,
+    meta: {
+      breadcrumb: "ipad 赏金规则页面"
+    }
+  },
+  {
+    path: "/pc/Earnings",
+    name: "pc-Earnings",
+    component: Earnings,
+    meta: {
+      breadcrumb: "ipad 赏金收益页面"
+    }
+  },
+  {
+    path: "/pc/Award",
+    name: "pc-Award",
+    component: Award,
+    meta: {
+      breadcrumb: "ipad 赏金奖励页面"
+    }
+  },
+  {
+    path: "/pc/Withdraw",
+    name: "pc-Withdraw",
+    component: Withdraw,
+    meta: {
+      breadcrumb: "ipad 提现页面"
+    }
+  },
+  {
+    path: "/pc/Replacephone",
+    name: "pc-Replacephone",
+    component: Replacephone,
+    meta: {
+      breadcrumb: "更换手机号页面"
+    }
+  },
+  {
+    path: "/pc/Originalphone",
+    name: "pc-Originalphone",
+    component: Originalphone,
+    meta: {
+      breadcrumb: "原手机号页面"
+    }
+  },
+  {
+    path: "/pc/Codephone",
+    name: "pc-Codephone",
+    component: Codephone,
+    meta: {
+      breadcrumb: "输入验证码页面"
+    }
+  },
+  {
+    path: "/pc/Nickname",
+    name: "pc-Nickname",
+    component: Nickname,
+    meta: {
+      breadcrumb: "修改昵称页面"
+    }
+  },
+  {
+    path: "/pc/policyPhone",
+    name: "pc-policyPhone",
+    component: policyPhone,
+    meta: {
+      breadcrumb: "用户注册协议"
+    }
+  },
+  {
+    path: "/pc/privacyPhone",
+    name: "pc-privacyPhone",
+    component: privacyPhone,
+    meta: {
+      breadcrumb: "隐私政策"
+    }
+  },
+  {
+    path: "/pc/Aboutapppc",
+    name: "pc-Aboutapppc",
+    component: Aboutapppc,
+    meta: {
+      breadcrumb: "关于"
+    }
+  },
+  {
+    path: "/pc/Attendclass",
+    name: "pc-Attendclass",
+    component: Attendclass,
+    meta: {
+      breadcrumb: "如何上课"
+    }
+  },
+  {
+    path: "/pc/Help",
+    name: "pc-Help",
+    component: Help,
+    meta: {
+      breadcrumb: "帮助中心"
+    }
+  },
+  {
+    path: "/pc/Evaluatelist",
+    name: "pc-Evaluatelist",
+    component: Evaluatelist,
+    meta: {
+      breadcrumb: "评价列表"
+    }
+  },
+  {
+    path: "/pc/Submit",
+    name: "pc-Submit",
+    component: Submit,
+    meta: {
+      breadcrumb: "提交评价"
+    }
+  },
+  {
+    path: "/pc/evaluatePc",
+    name: "pc-evaluatePc",
+    component: evaluatePc,
+    meta: {
+      breadcrumb: "学生评价"
+    }
+  },
+  {
+    path: "/pc/teacherReport",
+    name: "pc-teacherReport",
+    component: teacherReport,
+    meta: {
+      breadcrumb: "教师课堂报告"
+    }
+  },
+  {
+    path: "/pc/myCoupon",
+    name: "pc-myCoupon",
+    component: myCoupon,
+    meta: {
+      breadcrumb: "我的优惠券"
+    }
+  },
+  {
+    path: "/pc/Courselist",
+    name: "pc-Courselist",
+    component: Courselist,
+    meta: {
+      breadcrumb: "pc更多的页面"
+    }
+  },
+  {
+    path: "/pc/Login",
+    name: "pc-Login",
+    component: Login,
+    meta: {
+      breadcrumb: "登录web端"
+    }
+  },
+  {
+    path: "/pc/logisticsInfo",
+    name: "pc-logisticsInfo",
+    component: logisticsInfo,
+    meta: {
+      breadcrumb: "物流信息"
+    }
+  },
+  {
+    path: "/pc/invitationHomePad",
+    name: "pc-invitationHomePad",
+    component: invitationHomePad,
+    meta: {
+      breadcrumb: "分销首页pad端"
+    }
+  }
+];
 // const currRouterMap = [
 //   {
 //     path: "/curriculum",
@@ -3082,7 +2664,7 @@ export function createRouter() {
     routes: [
       ...loginMap,
       // ...webRouterMap,
-      // ...classRouterMap,
+      ...classRouterMap,
       // ...ipadRouterMap,
       // ...phoneRouterMap,
       // ...currRouterMap,

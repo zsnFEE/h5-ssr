@@ -126,7 +126,7 @@ export default {
     transform: translate(-50%, -50%);
   }
   .logo {
-    width: 185px;
+    // width: 185px;
     height: 73.5px;
   }
   .success {
