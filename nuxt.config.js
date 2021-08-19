@@ -30,7 +30,8 @@ export default {
     "@/plugins/vant",
     { src: "@/plugins/element-ui", ssr: true },
     "@/plugins/header",
-    "@/plugins/title-directive"
+    "@/plugins/title-directive",
+    "@/plugins/echarts"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

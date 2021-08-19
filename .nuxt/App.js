@@ -10,7 +10,7 @@ import '..\\src\\assets\\css\\public.less'
 
 import '..\\src\\assets\\css\\font.css'
 
-import '..\\node_modules\\_vant@2.12.25@vant\\lib\\index.css'
+import '..\\node_modules\\_vant@2.12.26@vant\\lib\\index.css'
 
 import '..\\node_modules\\_element-ui@2.15.5@element-ui\\lib\\theme-chalk\\index.css'
 

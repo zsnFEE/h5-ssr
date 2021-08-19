@@ -129,9 +129,9 @@
 </template>
 
 <script>
-import "echarts/lib/chart/radar";
-import "echarts/lib/chart/radar";
-import echarts from "@/lib/echarts";
+// import "echarts/lib/chart/radar";
+// import "echarts/lib/chart/radar";
+// import echarts from "@/lib/echarts";
 import { getReportinfo, saveWorks, removeWorks } from "../../api/common";
 import { Dialog, ImagePreview } from "vant";
 

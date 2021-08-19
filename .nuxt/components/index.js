@@ -1,5 +1,3 @@
-import { wrapFunctional } from './utils'
-
 export { default as BroadcastSchedule } from '../..\\src\\components\\broadcastSchedule.vue'
 export { default as Card } from '../..\\src\\components\\card.vue'
 export { default as CardDemoPhone } from '../..\\src\\components\\cardDemoPhone.vue'
@@ -36,6 +34,37 @@ export { default as VideoClassCard } from '../..\\src\\components\\videoClassCar
 export { default as VideoPackage } from '../..\\src\\components\\videoPackage.vue'
 export { default as ReportStudentPim } from '../..\\src\\components\\report\\studentPim.vue'
 export { default as ReportTeacherComments } from '../..\\src\\components\\report\\teacherComments.vue'
+export { default as Toast } from '../..\\src\\components\\toast\\index.js'
 export { default as PcList } from '../..\\src\\components\\pc\\list.vue'
 export { default as PcScheduleDate } from '../..\\src\\components\\pc\\pcScheduleDate.vue'
-export { default as Toast } from '../..\\src\\components\\toast\\index.js'
+
+// nuxt/nuxt.js#8607
+function wrapFunctional(options) {
+  if (!options || !options.functional) {
+    return options
+  }
+
+  const propKeys = Array.isArray(options.props) ? options.props : Object.keys(options.props || {})
+
+  return {
+    render(h) {
+      const attrs = {}
+      const props = {}
+
+      for (const key in this.$attrs) {
+        if (propKeys.includes(key)) {
+          props[key] = this.$attrs[key]
+        } else {
+          attrs[key] = this.$attrs[key]
+        }
+      }
+
+      return h(options, {
+        on: this.$listeners,
+        attrs,
+        props,
+        scopedSlots: this.$scopedSlots,
+      }, this.$slots.default)
+    }
+  }
+}
