@@ -129,9 +129,9 @@
 </template>
 
 <script>
-import "echarts/lib/chart/radar";
-import "echarts/lib/chart/radar";
-import echarts from "@/lib/echarts";
+// import "echarts/lib/chart/radar";
+// import "echarts/lib/chart/radar";
+// import echarts from "@/lib/echarts";
 import { getReportinfo, saveWorks, removeWorks } from "../../api/common";
 import { Dialog, ImagePreview } from "vant";
 
@@ -340,7 +340,7 @@ export default {
           }
         ]
       };
-      let echart = echarts.init(document.getElementById("echart"), null, {
+      let echart = this.$echarts.init(document.getElementById("echart"), null, {
         devicePixelRatio: 2.5
       });
       echart.setOption(option, true);

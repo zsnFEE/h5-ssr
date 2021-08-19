@@ -15,7 +15,7 @@
   </div>
 </template>
 <script>
-import echarts from "@/lib/echarts";
+// import echarts from "@/lib/echarts";
 import { answerStatistics } from "../api/common";
 export default {
   name: "statistics",
@@ -118,8 +118,9 @@ export default {
   },
   mounted() {
     this.apiload();
+
     // 基于准备好的dom，初始化echarts实例
-    this.myChart = echarts.init(document.getElementById("myChart"));
+    this.myChart = this.$echarts.init(document.getElementById("myChart"));
     // 绘制图表
     window.onresize = this.myChart.resize;
   },

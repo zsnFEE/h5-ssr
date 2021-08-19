@@ -12,6 +12,7 @@
     "generate": "nuxt generate",
     "precommit": "npm run lint"
   },
+  "type": "module",
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/router": "^1.6.1",
