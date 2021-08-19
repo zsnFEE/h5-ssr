@@ -7,7 +7,6 @@
  *
  */
 
-console.log("process", process);
 const dev = {
   baseUrl: process.env.VUE_APP_BASEURL
     ? process.env.VUE_APP_BASEURL

@@ -13,14 +13,14 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_b2caf4ae from 'nuxt_plugin_plugin_b2caf4ae' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_15132168 from 'nuxt_plugin_axios_15132168' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_router_6da405e3 from 'nuxt_plugin_router_6da405e3' // Source: .\\router.js (mode: 'all')
-import nuxt_plugin_vant_925e8cb6 from 'nuxt_plugin_vant_925e8cb6' // Source: ..\\src\\plugins\\vant (mode: 'all')
-import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ..\\src\\plugins\\element-ui (mode: 'all')
-import nuxt_plugin_header_2dd75181 from 'nuxt_plugin_header_2dd75181' // Source: ..\\src\\plugins\\header (mode: 'all')
-import nuxt_plugin_titledirective_67b122a6 from 'nuxt_plugin_titledirective_67b122a6' // Source: ..\\src\\plugins\\title-directive (mode: 'all')
-import nuxt_plugin_echarts_295016f4 from 'nuxt_plugin_echarts_295016f4' // Source: ..\\src\\plugins\\echarts (mode: 'all')
+import nuxt_plugin_plugin_2adfd4d2 from 'nuxt_plugin_plugin_2adfd4d2' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_axios_e3e5aa30 from 'nuxt_plugin_axios_e3e5aa30' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_router_30368472 from 'nuxt_plugin_router_30368472' // Source: ./router.js (mode: 'all')
+import nuxt_plugin_vant_925e8cb6 from 'nuxt_plugin_vant_925e8cb6' // Source: ../src/plugins/vant (mode: 'all')
+import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ../src/plugins/element-ui (mode: 'all')
+import nuxt_plugin_header_2dd75181 from 'nuxt_plugin_header_2dd75181' // Source: ../src/plugins/header (mode: 'all')
+import nuxt_plugin_titledirective_67b122a6 from 'nuxt_plugin_titledirective_67b122a6' // Source: ../src/plugins/title-directive (mode: 'all')
+import nuxt_plugin_echarts_295016f4 from 'nuxt_plugin_echarts_295016f4' // Source: ../src/plugins/echarts (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -88,7 +88,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"h5-ssr","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"script":[{"src":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002Fdsbridge\u002Fdist\u002Fdsbridge.js"}],"style":[]},
+    head: {"title":"北斗星在线教育","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"script":[{"src":"https:\u002F\u002Fcdn.jsdelivr.net\u002Fnpm\u002Fdsbridge\u002Fdist\u002Fdsbridge.js"}],"style":[]},
 
     store,
     router,
@@ -217,16 +217,16 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_b2caf4ae === 'function') {
-    await nuxt_plugin_plugin_b2caf4ae(app.context, inject)
+  if (typeof nuxt_plugin_plugin_2adfd4d2 === 'function') {
+    await nuxt_plugin_plugin_2adfd4d2(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_15132168 === 'function') {
-    await nuxt_plugin_axios_15132168(app.context, inject)
+  if (typeof nuxt_plugin_axios_e3e5aa30 === 'function') {
+    await nuxt_plugin_axios_e3e5aa30(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_router_6da405e3 === 'function') {
-    await nuxt_plugin_router_6da405e3(app.context, inject)
+  if (typeof nuxt_plugin_router_30368472 === 'function') {
+    await nuxt_plugin_router_30368472(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vant_925e8cb6 === 'function') {

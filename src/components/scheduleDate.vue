@@ -696,9 +696,7 @@ export default {
       this.showmore = false;
       this.popup = !this.popup;
     },
-    dateChanged(val) {
-      // console.log(123);
-    },
+    dateChanged(val) {},
     onAddrConfirm(val, isClose) {
       this.selectDay = this.formatDate(val, "yyyy-MM-dd");
       this.count =

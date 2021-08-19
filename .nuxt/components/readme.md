@@ -6,42 +6,42 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
-- `<BroadcastSchedule>` | `<broadcast-schedule>` (components/broadcastSchedule.vue)
-- `<Card>` | `<card>` (components/card.vue)
-- `<CardDemoPhone>` | `<card-demo-phone>` (components/cardDemoPhone.vue)
-- `<CardIpad>` | `<card-ipad>` (components/cardIpad.vue)
-- `<CardOrder>` | `<card-order>` (components/cardOrder.vue)
-- `<CardPhone>` | `<card-phone>` (components/cardPhone.vue)
-- `<CardPrice>` | `<card-price>` (components/cardPrice.vue)
-- `<Catalog>` | `<catalog>` (components/catalog.vue)
-- `<ClassButton>` | `<class-button>` (components/classButton.vue)
-- `<ClassTab>` | `<class-tab>` (components/classTab.vue)
-- `<CommetDialog>` | `<commet-dialog>` (components/commetDialog.vue)
-- `<Coupon>` | `<coupon>` (components/coupon.vue)
-- `<DateTimeTab>` | `<date-time-tab>` (components/dateTimeTab.vue)
-- `<Details>` | `<details>` (components/details.vue)
-- `<Header>` | `<header>` (components/header.vue)
-- `<Headerweb>` | `<headerweb>` (components/headerweb.vue)
-- `<Homework>` | `<homework>` (components/homework.vue)
-- `<Institutions>` | `<institutions>` (components/Institutions.vue)
-- `<Logistics>` | `<logistics>` (components/logistics.vue)
-- `<Navigation>` | `<navigation>` (components/navigation.vue)
-- `<NewCard>` | `<new-card>` (components/newCard.vue)
-- `<OrderDetail>` | `<order-detail>` (components/orderDetail.vue)
-- `<Personage>` | `<personage>` (components/personage.vue)
-- `<RecordedSchedule>` | `<recorded-schedule>` (components/recordedSchedule.vue)
-- `<ScheduleDate>` | `<schedule-date>` (components/scheduleDate.vue)
-- `<StandardMyInfoPhone>` | `<standard-my-info-phone>` (components/standardMyInfoPhone.vue)
-- `<Statistics>` | `<statistics>` (components/statistics.vue)
-- `<StudentNotes>` | `<student-notes>` (components/studentNotes.vue)
-- `<TeacherNotes>` | `<teacher-notes>` (components/teacherNotes.vue)
-- `<TestTable>` | `<test-table>` (components/testTable.vue)
-- `<TimeBar>` | `<time-bar>` (components/timeBar.vue)
-- `<TodayCard>` | `<today-card>` (components/todayCard.vue)
-- `<VideoClassCard>` | `<video-class-card>` (components/videoClassCard.vue)
-- `<VideoPackage>` | `<video-package>` (components/videoPackage.vue)
-- `<ReportStudentPim>` | `<report-student-pim>` (components/report/studentPim.vue)
-- `<ReportTeacherComments>` | `<report-teacher-comments>` (components/report/teacherComments.vue)
-- `<Toast>` | `<toast>` (components/toast/index.js)
-- `<PcList>` | `<pc-list>` (components/pc/list.vue)
-- `<PcScheduleDate>` | `<pc-schedule-date>` (components/pc/pcScheduleDate.vue)
+- `<Institutions>` | `<institutions>` (components/Institutions.vue) [async]
+- `<BroadcastSchedule>` | `<broadcast-schedule>` (components/broadcastSchedule.vue) [async]
+- `<Card>` | `<card>` (components/card.vue) [async]
+- `<CardDemoPhone>` | `<card-demo-phone>` (components/cardDemoPhone.vue) [async]
+- `<CardIpad>` | `<card-ipad>` (components/cardIpad.vue) [async]
+- `<CardOrder>` | `<card-order>` (components/cardOrder.vue) [async]
+- `<CardPhone>` | `<card-phone>` (components/cardPhone.vue) [async]
+- `<CardPrice>` | `<card-price>` (components/cardPrice.vue) [async]
+- `<Catalog>` | `<catalog>` (components/catalog.vue) [async]
+- `<ClassButton>` | `<class-button>` (components/classButton.vue) [async]
+- `<ClassTab>` | `<class-tab>` (components/classTab.vue) [async]
+- `<CommetDialog>` | `<commet-dialog>` (components/commetDialog.vue) [async]
+- `<Coupon>` | `<coupon>` (components/coupon.vue) [async]
+- `<DateTimeTab>` | `<date-time-tab>` (components/dateTimeTab.vue) [async]
+- `<Details>` | `<details>` (components/details.vue) [async]
+- `<Header>` | `<header>` (components/header.vue) [async]
+- `<Headerweb>` | `<headerweb>` (components/headerweb.vue) [async]
+- `<Homework>` | `<homework>` (components/homework.vue) [async]
+- `<Logistics>` | `<logistics>` (components/logistics.vue) [async]
+- `<Navigation>` | `<navigation>` (components/navigation.vue) [async]
+- `<NewCard>` | `<new-card>` (components/newCard.vue) [async]
+- `<OrderDetail>` | `<order-detail>` (components/orderDetail.vue) [async]
+- `<Personage>` | `<personage>` (components/personage.vue) [async]
+- `<RecordedSchedule>` | `<recorded-schedule>` (components/recordedSchedule.vue) [async]
+- `<ScheduleDate>` | `<schedule-date>` (components/scheduleDate.vue) [async]
+- `<StandardMyInfoPhone>` | `<standard-my-info-phone>` (components/standardMyInfoPhone.vue) [async]
+- `<Statistics>` | `<statistics>` (components/statistics.vue) [async]
+- `<StudentNotes>` | `<student-notes>` (components/studentNotes.vue) [async]
+- `<TeacherNotes>` | `<teacher-notes>` (components/teacherNotes.vue) [async]
+- `<TestTable>` | `<test-table>` (components/testTable.vue) [async]
+- `<TimeBar>` | `<time-bar>` (components/timeBar.vue) [async]
+- `<TodayCard>` | `<today-card>` (components/todayCard.vue) [async]
+- `<VideoClassCard>` | `<video-class-card>` (components/videoClassCard.vue) [async]
+- `<VideoPackage>` | `<video-package>` (components/videoPackage.vue) [async]
+- `<PcList>` | `<pc-list>` (components/pc/list.vue) [async]
+- `<PcScheduleDate>` | `<pc-schedule-date>` (components/pc/pcScheduleDate.vue) [async]
+- `<ReportStudentPim>` | `<report-student-pim>` (components/report/studentPim.vue) [async]
+- `<ReportTeacherComments>` | `<report-teacher-comments>` (components/report/teacherComments.vue) [async]
+- `<Toast>` | `<toast>` (components/toast/index.js) [async]

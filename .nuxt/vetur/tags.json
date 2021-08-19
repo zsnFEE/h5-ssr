@@ -1,4 +1,7 @@
 {
+  "Institutions": {
+    "description": "Auto imported from components/Institutions.vue"
+  },
   "BroadcastSchedule": {
     "description": "Auto imported from components/broadcastSchedule.vue"
   },
@@ -50,9 +53,6 @@
   "Homework": {
     "description": "Auto imported from components/homework.vue"
   },
-  "Institutions": {
-    "description": "Auto imported from components/Institutions.vue"
-  },
   "Logistics": {
     "description": "Auto imported from components/logistics.vue"
   },
@@ -101,6 +101,12 @@
   "VideoPackage": {
     "description": "Auto imported from components/videoPackage.vue"
   },
+  "PcList": {
+    "description": "Auto imported from components/pc/list.vue"
+  },
+  "PcScheduleDate": {
+    "description": "Auto imported from components/pc/pcScheduleDate.vue"
+  },
   "ReportStudentPim": {
     "description": "Auto imported from components/report/studentPim.vue"
   },
@@ -109,11 +115,5 @@
   },
   "Toast": {
     "description": "Auto imported from components/toast/index.js"
-  },
-  "PcList": {
-    "description": "Auto imported from components/pc/list.vue"
-  },
-  "PcScheduleDate": {
-    "description": "Auto imported from components/pc/pcScheduleDate.vue"
   }
 }
