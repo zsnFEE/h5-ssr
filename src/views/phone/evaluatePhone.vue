@@ -340,7 +340,7 @@ export default {
           }
         ]
       };
-      let echart = echarts.init(document.getElementById("echart"), null, {
+      let echart = this.$echarts.init(document.getElementById("echart"), null, {
         devicePixelRatio: 2.5
       });
       echart.setOption(option, true);
