@@ -4,7 +4,6 @@ import VueRouter from "vue-router";
 import curriculumList from "./views/pc/curriculumList.vue";
 import secondList from "./views/list/secondList.vue";
 import Studentschedules from "./views/pc/Studentschedules.vue";
-import pcLogin from "./views/pc/Login.vue";
 import signUp from "./views/sign/signUp.vue";
 import signUpCanvas from "./views/sign/signUpCanvas.vue";
 import home from "./views/home/home.vue";
@@ -116,6 +115,20 @@ import homework from "./views/report/homework.vue";
 import practiceReport from "./views/report/practiceReport.vue";
 import homeworkDetail from "./views/report/homeworkDetail.vue";
 import imgPreview from "./views/report/imgPreview.vue";
+import answerStatistics from "./views/answer/answerStatistics.vue";
+import answerCard from "./views/answer/answerCard.vue";
+import answerDetails from "./views/answer/answerDetails.vue";
+import partAdegpc from "./views/answer/partAdegpc.vue";
+import classroomPractice from "./views/answer/classroomPractice.vue";
+import myAnswer from "./views/answer/myAnswer.vue";
+import teachStage from "./views/answer/teachStage.vue";
+
+import roster from "./views/roster/roster.vue";
+import redeemCodeLink from "./views/redeem/redeemCodeLink.vue";
+import redeemCode from "./views/redeem/redeemCode.vue";
+import redeemCodeLinkSuccess from "./views/redeem/redeemCodeLinkSuccess.vue";
+
+import courseware from "./views/courseware/courseware.vue";
 
 Vue.use(VueRouter);
 
@@ -126,13 +139,7 @@ const listRouterMap = [
     component: secondList
   }
 ];
-const loginMap = [
-  {
-    path: "/pc/Login",
-    name: "pcLogin",
-    component: pcLogin
-  }
-];
+
 const phoneMap = [
   {
     path: "/phone/morePhone",
@@ -648,192 +655,80 @@ const reportMap = [
     }
   }
 ];
-// const signRouterMap = [
-//   {
-//     path: "/sign",
-//     redirect: "/sign/signUp",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "signUp",
-//         name: "signUp",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "signUp" */ "./views/sign/signUp.vue")
-//               ),
-//             "signUp"
-//           ),
 
-//         meta: {
-//           breadcrumb: "报名成功1"
-//         }
-//       },
-//       {
-//         path: "signUpCanvas",
-//         name: "signUpCanvas",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "signUpCanvas" */ "./views/sign/signUpCanvas.vue")
-//               ),
-//             "signUpCanvas"
-//           ),
+const answerMap = [
+  {
+    path: "/answer/answerStatistics",
+    name: "answerStatistics",
+    component: answerStatistics,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "answerStatistics"
+    }
+  },
+  {
+    path: "/answer/answerDetails",
+    name: "answerDetails",
+    component: answerDetails,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "answerDetails"
+    }
+  },
+  {
+    path: "/answer/partAdegpc",
+    name: "partAdegpc",
+    component: partAdegpc,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "pc的随堂练习"
+    }
+  },
+  {
+    path: "/answer/classroomPractice",
+    name: "classroomPractice",
+    component: classroomPractice,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "课堂练习答题卡"
+    }
+  },
+  {
+    path: "/answer/myAnswer",
+    name: "myAnswer",
+    component: myAnswer,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "我的随堂联系答题情况"
+    }
+  },
+  {
+    path: "/answer/teachStage",
+    name: "teachStage",
+    component: teachStage,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "讲台"
+    }
+  },
+  {
+    path: "/answer/answerCard",
+    name: "answerCard",
+    component: answerCard,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "答题卡"
+    }
+  }
+];
 
-//         meta: {
-//           keepalive: false,
-//           breadcrumb: "报名成功2"
-//         }
-//       }
-//     ]
-//   }
-// ];
-// const homeRouterMap = [
-//   {
-//     path: "/",
-//     redirect: "/home",
-//     // name: "home",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "home",
-//         name: "home",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/home.vue")
-//               ),
-//             "home"
-//           ),
-
-//         meta: {
-//           breadcrumb: "首页"
-//         }
-//       },
-//       {
-//         path: "tab",
-//         name: "tab",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(require(/* webpackChunkName: "tab" */ "./views/home/tab.vue")),
-//             "tab"
-//           ),
-
-//         meta: {
-//           noRefresh: true,
-//           breadcrumb: "tab"
-//         }
-//       },
-//       {
-//         path: "player",
-//         name: "player",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "player" */ "./views/home/player.vue")
-//               ),
-//             "player"
-//           ),
-
-//         meta: {
-//           breadcrumb: "播放"
-//         }
-//       },
-//       {
-//         path: "landingPage",
-//         name: "landingPage",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/landingPage.vue")
-//               ),
-//             "landingPage"
-//           ),
-
-//         meta: {
-//           keepalive: false,
-//           breadcrumb: "落地页面"
-//         }
-//       },
-//       {
-//         path: "selectCourseType",
-//         name: "selectCourseType",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/selectCourseType.vue")
-//               ),
-//             "selectCourseType"
-//           ),
-
-//         meta: {
-//           breadcrumb: "选择课程类型"
-//         }
-//       },
-//       {
-//         path: "lp",
-//         name: "landingPagePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "home" */ "./views/home/landingPagePhone.vue")
-//               ),
-//             "landingPagePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "购买课程"
-//         }
-//       }
-//     ]
-//   }
-// ];
-
-// const courseRouterMap = [
-//   {
-//     path: "/course",
-//     redirect: "/course/playCourse",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "playCourse",
-//         name: "playCourse",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "playCourse" */ "./views/course/playCourse.vue")
-//               ),
-//             "playCourse"
-//           ),
-
-//         meta: {
-//           breadcrumb: "播放页"
-//         }
-//       }
-//     ]
-//   }
-// ];
 const classRouterMap = [
   {
     path: "/pc/curriculumList",
@@ -1228,33 +1123,7 @@ const classRouterMap = [
     }
   }
 ];
-// const currRouterMap = [
-//   {
-//     path: "/curriculum",
-//     redirect: "/curriculum",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "curriculumList",
-//         name: "curriculumList",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "curriculumList" */ "./views/curriculum/curriculumList.vue")
-//               ),
-//             "curriculumList"
-//           ),
 
-//         meta: {
-//           breadcrumb: "我的课程"
-//         }
-//       }
-//     ]
-//   }
-// ];
 // const myRouterMap = [
 //   {
 //     path: "/my",
@@ -1282,821 +1151,7 @@ const classRouterMap = [
 //     ]
 //   }
 // ];
-// const phoneRouterMap = [
-//   {
-//     path: "/phone",
-//     redirect: "/phone/findPhone",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "morePhone",
-//         name: "morePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "morePhone" */ "./views/phone/morePhone.vue")
-//               ),
-//             "morePhone"
-//           ),
 
-//         meta: {
-//           breadcrumb: "更多移动端"
-//         }
-//       },
-//       {
-//         path: "homePagePhone",
-//         name: "homePagePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "homePagePhone" */ "./views/phone/homePagePhone.vue")
-//               ),
-//             "homePagePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "ydt首页移动端"
-//         }
-//       },
-
-//       {
-//         path: "curriculumListPhone",
-//         name: "curriculumListPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "curriculumListPhone" */ "./views/phone/curriculumListPhone.vue")
-//               ),
-//             "curriculumListPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "我的课程移动端"
-//         }
-//       },
-//       {
-//         path: "findPhone",
-//         name: "findPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "findPhone" */ "./views/phone/findPhone.vue")
-//               ),
-//             "findPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "发现移动端"
-//         }
-//       },
-//       {
-//         path: "loginPhone",
-//         name: "loginPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "loginPhone" */ "./views/phone/loginPhone.vue")
-//               ),
-//             "loginPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "登录"
-//         }
-//       },
-//       {
-//         path: "orderPhone",
-//         name: "orderPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderPhone" */ "./views/phone/orderPhone.vue")
-//               ),
-//             "orderPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "订单移动端"
-//         }
-//       },
-//       {
-//         path: "orderDetailsPhone",
-//         name: "orderDetailsPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "orderDetailsPhone" */ "./views/phone/orderDetailsPhone.vue")
-//               ),
-//             "orderDetailsPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "订单详情移动端"
-//         }
-//       },
-//       {
-//         path: "courseDetailsPhone",
-//         name: "courseDetailsPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "courseDetails" */ "./views/phone/courseDetailsPhone.vue")
-//               ),
-//             "courseDetailsPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "课程详情移动端审核版"
-//         }
-//       },
-//       {
-//         path: "createOrderPhone",
-//         name: "createOrderPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "courseDetails" */ "./views/phone/createOrderPhone.vue")
-//               ),
-//             "createOrderPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "创建订单移动端审核版"
-//         }
-//       },
-//       {
-//         path: "addAddressPhone",
-//         name: "addAddressPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "addAddressPhone" */ "./views/phone/addAddressPhone.vue")
-//               ),
-//             "addAddressPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "填写收货地址移动端"
-//         }
-//       },
-//       {
-//         path: "wechatAddPhone",
-//         name: "wechatAddPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "wechatAddPhone" */ "./views/phone/wechatAddPhone.vue")
-//               ),
-//             "wechatAddPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "添加微信移动端"
-//         }
-//       },
-//       {
-//         path: "secondListPhone",
-//         name: "secondListPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "secondListPhone" */ "./views/phone/secondListPhone.vue")
-//               ),
-//             "secondListPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "二阶目录移动端"
-//         }
-//       },
-//       {
-//         path: "myInfoPhone",
-//         name: "myInfoPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "myInfoPhone" */ "./views/phone/myInfoPhone.vue")
-//               ),
-//             "myInfoPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "我的移动端"
-//         }
-//       },
-//       {
-//         path: "settingPhone",
-//         name: "settingPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "settingPhone" */ "./views/phone/settingPhone.vue")
-//               ),
-//             "settingPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "个人信息设置移动端"
-//         }
-//       },
-//       {
-//         path: "policyPhone",
-//         name: "policyPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "policyPhone" */ "./views/phone/policyPhone.vue")
-//               ),
-//             "policyPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "用户服务条款移动端"
-//         }
-//       },
-//       {
-//         path: "privacyPhone",
-//         name: "privacyPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "privacyPhone" */ "./views/phone/privacyPhone.vue")
-//               ),
-//             "privacyPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "用户隐私条款移动端"
-//         }
-//       },
-//       {
-//         path: "middlePagePhone",
-//         name: "middlePagePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "middlePagePhone" */ "./views/phone/middlePagePhone.vue")
-//               ),
-//             "middlePagePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "微信支付中间页款移动端"
-//         }
-//       },
-//       {
-//         path: "improveInfoPhone",
-//         name: "improveInfoPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "improveInfoPhone" */ "./views/phone/improveInfoPhone.vue")
-//               ),
-//             "improveInfoPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "完善个人信息移动端"
-//         }
-//       },
-//       {
-//         path: "smallClassPhone",
-//         name: "smallClassPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "smallClassPhone" */ "./views/phone/smallClassPhone.vue")
-//               ),
-//             "smallClassPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "小课堂移动端"
-//         }
-//       },
-//       {
-//         path: "classDetailsPhone",
-//         name: "classDetailsPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "classDetailsPhone" */ "./views/phone/classDetailsPhone.vue")
-//               ),
-//             "classDetailsPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "课程详情移动端"
-//         }
-//       },
-//       {
-//         path: "projectionPhone",
-//         name: "projectionPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "projectionPhone" */ "./views/phone/projectionPhone.vue")
-//               ),
-//             "projectionPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "课件投屏移动端"
-//         }
-//       },
-//       {
-//         path: "createOrderAddressPhone",
-//         name: "createOrderAddressPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "createOrderAddressPhone" */ "./views/phone/createOrderAddressPhone.vue")
-//               ),
-//             "createOrderAddressPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "创建订单移动端"
-//         }
-//       },
-//       {
-//         path: "writeAddressPhone",
-//         name: "writeAddressPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "writeAddressPhone" */ "./views/phone/writeAddressPhone.vue")
-//               ),
-//             "writeAddressPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "填写地址移动端"
-//         }
-//       },
-//       {
-//         path: "choiceAddressPhone",
-//         name: "choiceAddressPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "choiceAddressPhone" */ "./views/phone/choiceAddressPhone.vue")
-//               ),
-//             "choiceAddressPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "选择地址移动端"
-//         }
-//       },
-//       {
-//         path: "recordListPhone",
-//         name: "recordListPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "recordListPhone" */ "./views/phone/recordListPhone.vue")
-//               ),
-//             "recordListPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "录播课二级列表移动端"
-//         }
-//       },
-//       {
-//         path: "smallClassDetailsPhone",
-//         name: "smallClassDetailsPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "smallClassDetailsPhone" */ "./views/phone/smallClassDetailsPhone.vue")
-//               ),
-//             "smallClassDetailsPhone"
-//           ),
-
-//         meta: {
-//           title: "课程详情",
-//           breadcrumb: "小课堂详情移动端"
-//         }
-//       },
-//       {
-//         path: "invitationPhone",
-//         name: "invitationPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "invitationPhone" */ "./views/phone/invitationPhone.vue")
-//               ),
-//             "invitationPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "邀请有礼移动端"
-//         }
-//       },
-//       {
-//         path: "invitationHomePhone",
-//         name: "invitationHomePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "invitationHomePhone" */ "./views/phone/invitationHomePhone.vue")
-//               ),
-//             "invitationHomePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "首页邀请有礼移动端"
-//         }
-//       },
-
-//       {
-//         path: "invitationProfitPhone",
-//         name: "invitationProfitPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "invitationProfitPhone" */ "./views/phone/invitationProfitPhone.vue")
-//               ),
-//             "invitationProfitPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "邀请收益移动端"
-//         }
-//       },
-//       {
-//         path: "invitationRulePhone",
-//         name: "invitationRulePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "invitationRulePhone" */ "./views/phone/invitationRulePhone.vue")
-//               ),
-//             "invitationRulePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "邀请收益规则移动端"
-//         }
-//       },
-//       {
-//         path: "invitationDrawingPhone",
-//         name: "invitationDrawingPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "invitationDrawingPhone" */ "./views/phone/invitationDrawingPhone.vue")
-//               ),
-//             "invitationDrawingPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "邀请提现移动端"
-//         }
-//       },
-//       {
-//         path: "inquiryTeacherPhone",
-//         name: "inquiryTeacherPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "inquiryTeacherPhone" */ "./views/phone/inquiryTeacherPhone.vue")
-//               ),
-//             "inquiryTeacherPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "询问教师移动端"
-//         }
-//       },
-//       {
-//         path: "replacePhone",
-//         name: "replacePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "replacePhone" */ "./views/phone/replacePhone.vue")
-//               ),
-//             "replacePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "更换手机号移动端"
-//         }
-//       },
-//       {
-//         path: "updateNamePhone",
-//         name: "updateNamePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "updateNamePhone" */ "./views/phone/updateNamePhone.vue")
-//               ),
-//             "updateNamePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "更改姓名移动端"
-//         }
-//       },
-//       {
-//         path: "personalPhone",
-//         name: "personalPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "personalPhone" */ "./views/phone/personalPhone.vue")
-//               ),
-//             "personalPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "程序设置移动端"
-//         }
-//       },
-
-//       {
-//         path: "aboutAppPhone",
-//         name: "aboutAppPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "aboutAppPhone" */ "./views/phone/aboutAppPhone.vue")
-//               ),
-//             "aboutAppPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "关于程序移动端"
-//         }
-//       },
-//       {
-//         path: "helpCenterPhone",
-//         name: "helpCenterPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "helpCenterPhone" */ "./views/phone/helpCenterPhone.vue")
-//               ),
-//             "helpCenterPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "帮助中心移动端"
-//         }
-//       },
-//       {
-//         path: "toTeachPhone",
-//         name: "toTeachPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "toTeachPhone" */ "./views/phone/toTeachPhone.vue")
-//               ),
-//             "toTeachPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "如何上课移动端"
-//         }
-//       },
-//       {
-//         path: "evaluatePhone",
-//         name: "evaluatePhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "evaluatePhone" */ "./views/phone/evaluatePhone.vue")
-//               ),
-//             "evaluatePhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "学生评价移动端"
-//         }
-//       },
-//       {
-//         path: "myCouponPhone",
-//         name: "myCouponPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "myCouponPhone" */ "./views/phone/myCouponPhone.vue")
-//               ),
-//             "myCouponPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "我的优惠券移动端"
-//         }
-//       },
-//       {
-//         path: "useCouponPhone",
-//         name: "useCouponPhone",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "useCouponPhone" */ "./views/phone/useCouponPhone.vue")
-//               ),
-//             "useCouponPhone"
-//           ),
-
-//         meta: {
-//           breadcrumb: "使用优惠券移动端"
-//         }
-//       },
-//       {
-//         path: "standardCurriculumListPhone",
-//         name: "standardCurriculumListPhone",
-//         component: standardCurriculumListPhone,
-
-//         // r =>
-//         //   require.ensure(
-//         //     [],
-//         //     () =>
-//         //       r(
-//         //         require(/* webpackChunkName: "standardCurriculumListPhone" */ "./views/phone/standardCurriculumListPhone.vue")
-//         //       ),
-//         //     "standardCurriculumListPhone"
-//         //   ),
-//         meta: {
-//           keepalive: true,
-//           breadcrumb: "标准版手机端课程页面"
-//         }
-//       },
-//       {
-//         path: "phoneNewSchedule",
-//         name: "phoneNewSchedule",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "phoneNewSchedule" */ "./views/phone/phoneNewSchedule.vue")
-//               ),
-//             "phoneNewSchedule"
-//           ),
-//         meta: {
-//           keepalive: true,
-//           breadcrumb: "标准版手机端新课表"
-//         }
-//       },
-//       {
-//         path: "accessCode",
-//         name: "accessCode",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "accessCode" */ "./views/phone/accessCode.vue")
-//               ),
-//             "accessCode"
-//           ),
-
-//         meta: {
-//           breadcrumb: "登录后修改密码验证码验证"
-//         }
-//       },
-//       {
-//         path: "changePassword",
-//         name: "changePassword",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "changePassword" */ "./views/phone/changePassword.vue")
-//               ),
-//             "changePassword"
-//           ),
-
-//         meta: {
-//           breadcrumb: "修改密码"
-//         }
-//       },
-//       {
-//         path: "retrievePassword",
-//         name: "retrievePassword",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "retrievePassword" */ "./views/phone/retrievePassword.vue")
-//               ),
-//             "retrievePassword"
-//           ),
-
-//         meta: {
-//           breadcrumb: "登录前修改密码验证码验证"
-//         }
-//       },
-//       {
-//         path: "logisticsInfo",
-//         name: "logisticsInfo",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () =>
-//               r(
-//                 require(/* webpackChunkName: "logisticsInfo" */ "./views/phone/logisticsInfo.vue")
-//               ),
-//             "logisticsInfo"
-//           ),
-
-//         meta: {
-//           breadcrumb: "物流信息"
-//         }
-//       }
-//     ]
-//   }
-// ];
 // const ipadRouterMap = [
 //   {
 //     path: "/pad",
@@ -2158,6 +1213,7 @@ const classRouterMap = [
 //     ]
 //   }
 // ];
+
 // const webRouterMap = [
 //   {
 //     path: "/web",
@@ -2797,144 +1853,26 @@ const classRouterMap = [
 //     ]
 //   }
 // ];
-// const answerRouterMap = [
-//   {
-//     path: "/answer",
-//     redirect: "/answer/answerStatistics",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "answerStatistics",
-//         name: "answerStatistics",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/answer/answerStatistics.vue")),
-//             "answerStatistics"
-//           ),
-//         meta: {
-//           bg: "dark",
-//           noRefresh: true,
-//           breadcrumb: "answerStatistics"
-//         }
-//       },
-//       {
-//         path: "answerCard",
-//         name: "answerCard",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/answer/answerCard.vue")),
-//             "answerCard"
-//           ),
-//         meta: {
-//           bg: "dark",
-//           noRefresh: true,
-//           breadcrumb: "答题卡"
-//         }
-//       },
-//       {
-//         path: "answerDetails",
-//         name: "answerDetails",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/answer/answerDetails.vue")),
-//             "answerDetails"
-//           ),
-//         meta: {
-//           bg: "dark",
-//           noRefresh: true,
-//           breadcrumb: "answerDetails"
-//         }
-//       },
-//       {
-//         path: "partAdegpc",
-//         name: "partAdegpc",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/answer/partAdegpc.vue")),
-//             "partAdegpc"
-//           ),
-//         meta: {
-//           bg: "dark",
-//           noRefresh: true,
-//           breadcrumb: "pc的随堂练习"
-//         }
-//       },
-//       {
-//         path: "classroomPractice",
-//         name: "classroomPractice",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/answer/classroomPractice.vue")),
-//             "classroomPractice"
-//           ),
-//         meta: {
-//           bg: "dark",
-//           noRefresh: true,
-//           breadcrumb: "课堂练习答题卡"
-//         }
-//       },
-//       {
-//         path: "myAnswer",
-//         name: "myAnswer",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/answer/myAnswer.vue")),
-//             "myAnswer"
-//           ),
-//         meta: {
-//           bg: "dark",
-//           breadcrumb: "我的随堂联系答题情况"
-//         }
-//       },
-//       {
-//         path: "teachStage",
-//         name: "teachStage",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/answer/teachStage.vue")),
-//             "teachStage"
-//           ),
-//         meta: {
-//           breadcrumb: "讲台"
-//         }
-//       }
-//     ]
-//   }
-// ];
 
-// const rosterRouterMap = [
-//   {
-//     path: "/roster",
-//     redirect: "/roster/roster",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "roster",
-//         name: "roster",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/roster/roster.vue")),
-//             "roster"
-//           ),
-//         meta: {
-//           bg: "dark",
-//           noRefresh: true,
-//           breadcrumb: "roster"
-//         }
-//       }
-//     ]
-//   }
-// ];
+const rosterMap = [
+  {
+    path: "/roster/roster",
+    name: "roster",
+    component: roster
+  }
+];
+const coursewareMap = [
+  {
+    path: "/courseware/courseware",
+    name: "courseware",
+    component: courseware,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "courseware"
+    }
+  }
+];
 
 // const coursewareRouterMap = [
 //   {
@@ -2961,6 +1899,24 @@ const classRouterMap = [
 //     ]
 //   }
 // ];
+
+const redeemMap = [
+  {
+    path: "/redeem/redeemCode",
+    name: "redeemCode",
+    component: redeemCode
+  },
+  {
+    path: "/redeem/redeemCodeLink",
+    name: "redeemCodeLink",
+    component: redeemCodeLink
+  },
+  {
+    path: "/redeem/redeemCodeLinkSuccess",
+    name: "redeemCodeLinkSuccess",
+    component: redeemCodeLinkSuccess
+  }
+];
 
 // const redeemRouterMap = [
 //   {
@@ -3209,15 +2165,13 @@ const classRouterMap = [
 //     ...redeemRouterMap
 //   ]
 // });
-let router;
 export function createRouter() {
-  router = new VueRouter({
+  let router = new VueRouter({
     mode: "history",
     base: process.env.BASE_URL,
     linkActiveClass: "nuxt-link-active",
     fallback: false,
     routes: [
-      ...loginMap,
       // ...webRouterMap,
       ...classRouterMap,
       // ...ipadRouterMap,
@@ -3227,19 +2181,18 @@ export function createRouter() {
       ...homeRouterMap,
       ...listRouterMap,
       ...phoneMap,
-      ...reportMap
+      ...reportMap,
       // ...courseRouterMap,
       // ...myRouterMap,
       // ...setRouterMap,
       // ...fileRouterMap,
-      // ...signRouterMap
+      ...signRouterMap,
+      ...answerMap,
       // ...orderRouterMap,
-      // ...answerRouterMap,
-      // ...rosterRouterMap,
-      // ...coursewareRouterMap,
+      ...rosterMap,
+      ...coursewareMap,
       // ...noteRouterMap,
-      // ...reportRouterMap,
-      // ...redeemRouterMap
+      ...redeemMap
     ]
   });
   Vue.$router = router;
