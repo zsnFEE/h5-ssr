@@ -66,7 +66,7 @@ export default {
   build: {
     publicPath: nuxtEnv[process.env.MODE]
       ? nuxtEnv[process.env.MODE].api.VUE_APP_CDN
-      : "/",
+      : "",
     vendor: ["element-ui"],
     extractCSS: true,
     plugins: [
