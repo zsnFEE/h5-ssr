@@ -14,7 +14,7 @@ module.exports = {
       port: 3593,
       max_memory_restart: "500M",
       env: {
-        COMMON_VARIABLE: "true"
+        MODE: "customer-mingqian"
       },
       env_production: {
         NODE_ENV: "production"

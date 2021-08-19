@@ -38,7 +38,9 @@ export default {
     "vant/lib/index.css",
     "element-ui/lib/theme-chalk/index.css"
   ],
-
+  render: {
+    resourceHints: false
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "@/plugins/vant",
