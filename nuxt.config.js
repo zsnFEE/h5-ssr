@@ -1,19 +1,13 @@
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
-const productionGzipExtensions = ["js", "css"];
+const productionGzipExtensions = ["js", "css", "json", "ttf"];
 import nuxtEnv from "./nuxt_env.js";
-// console.log(
-//   "nuxt config",
-//   nuxtEnv,
-//   nuxtEnv[process.env.MODE],
-//   nuxtEnv[process.env.MODE].api.VUE_APP_CURRENTMODE,
-//   process.env.MODE
-// );
+// console.log("nuxt config", process.env.MODE, nuxtEnv[process.env.MODE]);
 
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
-
   head: {
-    title: nuxtEnv[process.env.MODE].api.VUE_APP_CUSTOMER,
+    title: nuxtEnv[process.env.MODE]
+      ? nuxtEnv[process.env.MODE].api.VUE_APP_CUSTOMER
+      : "北斗星在线教育",
     htmlAttrs: {
       lang: "en"
     },
@@ -27,7 +21,11 @@ export default {
       {
         rel: "icon",
         type: "image/x-icon",
-        href: `/${nuxtEnv[process.env.MODE].api.VUE_APP_CURRENTMODE}.ico`
+        href: `/${
+          nuxtEnv[process.env.MODE]
+            ? nuxtEnv[process.env.MODE].api.VUE_APP_CURRENTMODE
+            : "favicon"
+        }.ico`
       }
     ],
     script: [{ src: "https://cdn.jsdelivr.net/npm/dsbridge/dist/dsbridge.js" }]
@@ -50,9 +48,8 @@ export default {
     "@/plugins/echarts"
   ],
 
-  env: {
-    ...nuxtEnv[process.env.MODE].api
-  },
+  env: nuxtEnv[process.env.MODE] ? { ...nuxtEnv[process.env.MODE].api } : {},
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -67,6 +64,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    publicPath: nuxtEnv[process.env.MODE]
+      ? nuxtEnv[process.env.MODE].api.VUE_APP_CDN
+      : "/",
     vendor: ["element-ui"],
     extractCSS: true,
     plugins: [
