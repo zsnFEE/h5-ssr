@@ -1,5 +1,7 @@
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const productionGzipExtensions = ["js", "css"];
+import nuxtEnv from "./nuxt_env.js";
+console.log("nuxt config", nuxtEnv);
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -34,6 +36,7 @@ export default {
     "@/plugins/echarts"
   ],
 
+  env: {},
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
