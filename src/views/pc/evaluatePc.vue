@@ -164,7 +164,7 @@
   </div>
 </template>
 <script>
-// import "echarts/lib/chart/radar";
+import "echarts/lib/chart/radar";
 // import echarts from "@/lib/echarts";
 import { sendMessage } from "../../api/client";
 import { getReportinfo, saveWorks, removeWorks } from "../../api/common";
