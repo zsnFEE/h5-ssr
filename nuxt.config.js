@@ -1,19 +1,19 @@
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const productionGzipExtensions = ["js", "css"];
 import nuxtEnv from "./nuxt_env.js";
-console.log(
-  "nuxt config",
-  nuxtEnv,
-  nuxtEnv[process.env.MODE],
-  nuxtEnv[process.env.MODE].api,
-  process.env.MODE
-);
+// console.log(
+//   "nuxt config",
+//   nuxtEnv,
+//   nuxtEnv[process.env.MODE],
+//   nuxtEnv[process.env.MODE].api.VUE_APP_CURRENTMODE,
+//   process.env.MODE
+// );
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
 
   head: {
-    title: "h5-ssr",
+    title: nuxtEnv[process.env.MODE].api.VUE_APP_CUSTOMER,
     htmlAttrs: {
       lang: "en"
     },
@@ -23,7 +23,13 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: `/${nuxtEnv[process.env.MODE].api.VUE_APP_CURRENTMODE}.ico`
+      }
+    ],
     script: [{ src: "https://cdn.jsdelivr.net/npm/dsbridge/dist/dsbridge.js" }]
   },
   srcDir: "src/",

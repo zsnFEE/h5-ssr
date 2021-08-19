@@ -36,6 +36,6 @@ export { default as VideoClassCard } from '../../src/components/videoClassCard.v
 export { default as VideoPackage } from '../../src/components/videoPackage.vue'
 export { default as PcList } from '../../src/components/pc/list.vue'
 export { default as PcScheduleDate } from '../../src/components/pc/pcScheduleDate.vue'
+export { default as Toast } from '../../src/components/toast/index.js'
 export { default as ReportStudentPim } from '../../src/components/report/studentPim.vue'
 export { default as ReportTeacherComments } from '../../src/components/report/teacherComments.vue'
-export { default as Toast } from '../../src/components/toast/index.js'

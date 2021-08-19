@@ -9,6 +9,7 @@
     "start": "nuxt start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "dev:standard-dev": "cross-env MODE=standard-dev nuxt",
+    "dev:customer-mingqian": "cross-env MODE=customer-mingqian nuxt",
     "generate": "nuxt generate",
     "precommit": "npm run lint"
   },

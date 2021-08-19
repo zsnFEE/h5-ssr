@@ -5,7 +5,8 @@ export default {
       NODE_ENV: "production",
       VUE_APP_CURRENTMODE: "standard-dev",
       VUE_APP_APISITE: "apidevse.beidouclass.cn",
-      VUE_APP_BASEURL: "https://apidevse.beidouclass.cn"
+      VUE_APP_BASEURL: "https://apidevse.beidouclass.cn",
+      VUE_APP_CUSTOMER: "北斗星在线教育"
     }
   },
   strandard: {
@@ -14,7 +15,8 @@ export default {
       NODE_ENV: "production",
       VUE_APP_CURRENTMODE: "standard",
       VUE_APP_APISITE: "apise.beidouclass.cn",
-      VUE_APP_BASEURL: "https://apise.beidouclass.cn"
+      VUE_APP_BASEURL: "https://apise.beidouclass.cn",
+      VUE_APP_CUSTOMER: "北斗星在线教育"
     }
   },
   "standard-online": {

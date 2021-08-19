@@ -244,7 +244,6 @@ export default {
       });
     },
     onAddrConfirm(val) {
-      console.log(val);
       let born = this.formatDate(val, "yyyy-MM-dd hh:mm").substr(0, 10);
       let arr = {
         nickname: this.user.nickname,
