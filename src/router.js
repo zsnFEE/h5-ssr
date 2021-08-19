@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import curriculumList from "./views/pc/curriculumList.vue";
+import pccurriculumList from "./views/pc/curriculumList.vue";
 import secondList from "./views/list/secondList.vue";
 import Studentschedules from "./views/pc/Studentschedules.vue";
 import signUp from "./views/sign/signUp.vue";
@@ -129,6 +129,11 @@ import redeemCode from "./views/redeem/redeemCode.vue";
 import redeemCodeLinkSuccess from "./views/redeem/redeemCodeLinkSuccess.vue";
 
 import courseware from "./views/courseware/courseware.vue";
+import playCourse from "./views/course/playCourse.vue";
+import curriculumList from "./views/curriculum/curriculumList.vue";
+
+import notes from "./views/classNote/notes.vue";
+import notes_view from "./views/classNote/notes_view.vue";
 
 Vue.use(VueRouter);
 
@@ -729,11 +734,21 @@ const answerMap = [
   }
 ];
 
+const courseRouterMap = [
+  {
+    path: "/course/playCourse",
+    name: "course-playCourse",
+    component: playCourse,
+    meta: {
+      breadcrumb: "播放页"
+    }
+  }
+];
 const classRouterMap = [
   {
     path: "/pc/curriculumList",
     name: "pc-curriculumList",
-    component: curriculumList,
+    component: pccurriculumList,
     meta: {
       breadcrumb: "我的课程"
     }
@@ -1123,7 +1138,16 @@ const classRouterMap = [
     }
   }
 ];
-
+const currRouterMap = [
+  {
+    path: "/curriculum/curriculumList",
+    name: "curriculum-curriculumList",
+    component: curriculumList,
+    meta: {
+      breadcrumb: "我的课程"
+    }
+  }
+];
 // const myRouterMap = [
 //   {
 //     path: "/my",
@@ -1918,49 +1942,28 @@ const redeemMap = [
   }
 ];
 
-// const redeemRouterMap = [
-//   {
-//     path: "/redeem",
-//     redirect: "/redeem/redeemCode",
-//     component: mainLayout,
-//     hidden: true,
-//     children: [
-//       {
-//         path: "redeemCode",
-//         name: "redeemCode",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/redeem/redeemCode.vue")),
-//             "redeemCode"
-//           ),
-//         meta: {}
-//       },
-//       {
-//         path: "redeemCodeLink",
-//         name: "redeemCodeLink",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/redeem/redeemCodeLink.vue")),
-//             "redeemCodeLink"
-//           ),
-//         meta: {}
-//       },
-//       {
-//         path: "redeemCodeLinkSuccess",
-//         name: "redeemCodeLinkSuccess",
-//         component: r =>
-//           require.ensure(
-//             [],
-//             () => r(require("./views/redeem/redeemCodeLinkSuccess.vue")),
-//             "redeemCodeLinkSuccess"
-//           ),
-//         meta: {}
-//       }
-//     ]
-//   }
-// ];
+const noteMap = [
+  {
+    path: "/classNote/notes",
+    name: "notes",
+    component: notes,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "notes"
+    }
+  },
+  {
+    path: "/classNote/notes_view",
+    name: "notes_view",
+    component: notes_view,
+    meta: {
+      bg: "dark",
+      noRefresh: true,
+      breadcrumb: "notes_view"
+    }
+  }
+];
 
 // const noteRouterMap = [
 //   {
@@ -2175,14 +2178,13 @@ export function createRouter() {
       // ...webRouterMap,
       ...classRouterMap,
       // ...ipadRouterMap,
-      // ...phoneRouterMap,
-      // ...currRouterMap,
+      ...currRouterMap,
       // ...ipadFromRouterMap,
       ...homeRouterMap,
       ...listRouterMap,
       ...phoneMap,
       ...reportMap,
-      // ...courseRouterMap,
+      ...courseRouterMap,
       // ...myRouterMap,
       // ...setRouterMap,
       // ...fileRouterMap,
@@ -2191,7 +2193,7 @@ export function createRouter() {
       // ...orderRouterMap,
       ...rosterMap,
       ...coursewareMap,
-      // ...noteRouterMap,
+      ...noteMap,
       ...redeemMap
     ]
   });
