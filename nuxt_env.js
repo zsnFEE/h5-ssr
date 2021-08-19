@@ -1,5 +1,5 @@
 export default {
-  "strandard-dev": {
+  "standard-dev": {
     server: {},
     api: {
       NODE_ENV: "production",

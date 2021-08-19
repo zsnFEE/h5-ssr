@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {}
+      env: {"NODE_ENV":"production","VUE_APP_CURRENTMODE":"standard-dev","VUE_APP_APISITE":"apidevse.beidouclass.cn","VUE_APP_BASEURL":"https://apidevse.beidouclass.cn"}
     }
     // Only set once
 

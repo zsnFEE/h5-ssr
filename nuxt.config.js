@@ -1,10 +1,17 @@
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const productionGzipExtensions = ["js", "css"];
 import nuxtEnv from "./nuxt_env.js";
-console.log("nuxt config", nuxtEnv);
+console.log(
+  "nuxt config",
+  nuxtEnv,
+  nuxtEnv[process.env.MODE],
+  nuxtEnv[process.env.MODE].api,
+  process.env.MODE
+);
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+
   head: {
     title: "h5-ssr",
     htmlAttrs: {
@@ -20,6 +27,7 @@ export default {
     script: [{ src: "https://cdn.jsdelivr.net/npm/dsbridge/dist/dsbridge.js" }]
   },
   srcDir: "src/",
+
   css: [
     "assets/css/public.less",
     "assets/css/font.css",
@@ -35,7 +43,9 @@ export default {
     "@/plugins/title-directive"
   ],
 
-  env: {},
+  env: {
+    ...nuxtEnv[process.env.MODE].api
+  },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 

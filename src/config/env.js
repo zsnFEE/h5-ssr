@@ -6,8 +6,8 @@
  * credential: 跨域
  *
  */
+import nuxtEnv from "../../nuxt_env.js";
 
-console.log("process", process);
 const dev = {
   baseUrl: process.env.VUE_APP_BASEURL
     ? process.env.VUE_APP_BASEURL
@@ -18,5 +18,6 @@ const dev = {
   // "https://api.stage.beidouclass.cn",
   credential: true
 };
+console.log(process.env, process.env.VUE_APP_BASEURL);
 
 export default dev;
