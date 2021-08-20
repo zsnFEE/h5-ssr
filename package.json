@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "serve": "nuxt",
     "dev:standard-dev": "cross-env MODE=standard-dev nuxt",
     "dev:customer-mingqian": "cross-env MODE=customer-mingqian nuxt",
     "build": "nuxt build",
