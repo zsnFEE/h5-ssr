@@ -1,36 +1,58 @@
 module.exports = {
   apps: [
     {
-      name: "123",
+      name: "standard",
       script: "./node_modules/nuxt/bin/nuxt.js",
       append_env_to_name: true,
-      // cwd: "/var/www/beidou-web",
-      // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
       args: "start",
       instances: 2,
       exec_mode: "cluster",
       autorestart: true,
       watch: true,
       port: 3593,
-      max_memory_restart: "500M",
-      env: {
-        MODE: "customer-mingqian"
-      },
-      env_production: {
-        NODE_ENV: "production"
-      }
+      max_memory_restart: "500M"
     }
   ],
   deploy: {
-    production: {
-      user: "zhaosinan",
-      host: "0.0.0.0",
-      ref: "origin/ssr-official",
-      repo: "git@git.beidouclass.cn:web/beidou-official.git",
-      path: "/Users/zhaosinan/Desktop/beidouclass/beidou-official",
+    "standard-dev": {
+      user: "node",
+      host: "39.100.245.204",
+      ref: "origin/standard-dev",
+      repo: "git@git.beidouclass.cn:web/beidou-webembed.git",
+      path: "/Users/zhaosinan/Desktop/beidouclass/beidou-webembed",
       ssh_options: "StrictHostKeyChecking=no",
       "post-deploy":
-        "rm -rf node_modules && export PATH=$PATH:/Users/zhaosinan/.nvm/versions/node/v12.18.3/bin && npm install && npm run build && pm2 list &&  pm2 startOrReload /Users/zhaosinan/Desktop/beidouclass/beidou-official/ecosystem.config.js --env production  && pm2 list && echo $?"
+        "rm -rf node_modules && cnpm install && npm run build:standard-dev && pm2 list &&  pm2 startOrReload ecosystem.config.js  && pm2 list && echo $?"
+    },
+    standard: {
+      user: "node",
+      host: "root@39.100.245.204",
+      ref: "origin/standard",
+      repo: "git@git.beidouclass.cn:web/beidou-webembed.git",
+      path: "/Users/zhaosinan/Desktop/beidouclass/beidou-webembed",
+      ssh_options: "StrictHostKeyChecking=no",
+      "post-deploy":
+        "rm -rf node_modules&& cnpm install && npm run build:standard && pm2 list &&  pm2 startOrReload ecosystem.config.js  && pm2 list && echo $?"
+    },
+    "standard-online": {
+      user: "node",
+      host: "root@39.100.245.204",
+      ref: "origin/standard-online",
+      repo: "git@git.beidouclass.cn:web/beidou-webembed.git",
+      path: "/Users/zhaosinan/Desktop/beidouclass/beidou-webembed",
+      ssh_options: "StrictHostKeyChecking=no",
+      "post-deploy":
+        "rm -rf node_modules && cnpm install && npm run build:standard-online && pm2 list &&  pm2 startOrReload ecosystem.config.js  && pm2 list && echo $?"
+    },
+    "customer-mingqian": {
+      user: "node",
+      host: "0.0.0.0",
+      ref: "origin/customer-mingqian",
+      repo: "git@git.beidouclass.cn:web/beidou-webembed.git",
+      path: "/Users/zhaosinan/Desktop/beidouclass/beidou-webembed",
+      ssh_options: "StrictHostKeyChecking=no",
+      "post-deploy":
+        "rm -rf node_modules && cnpm install && npm run build:customer-mingqian && pm2 list &&  pm2 startOrReload ecosystem.config.js  && pm2 list && echo $?"
     }
   }
 };
