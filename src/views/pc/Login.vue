@@ -64,8 +64,16 @@
 import { smsLogin, getLoginSms } from "../../api/common";
 import { isMobile } from "../../common/util";
 import { Field, NumberKeyboard, PasswordInput } from "vant";
-
+import { mapState, mapMutations } from "vuex";
 export default {
+  fetch({ store }) {
+    store.commit("increment");
+  },
+  computed: {
+    ...mapState("user", {
+      userInfo: state => state.userInfo
+    })
+  },
   components: {
     [Field.name]: Field,
     [PasswordInput.name]: PasswordInput,
@@ -104,6 +112,7 @@ export default {
         }).then(res => {
           if (res.code == 0) {
             this.$toast("登录成功");
+            this.increment(res.data);
             localStorage.setItem("access_token", res.data.access_token);
             localStorage.setItem("member", JSON.stringify(res.data.member));
             if (localStorage.fromRouterPath == "/") {
@@ -129,6 +138,8 @@ export default {
     }
   },
   methods: {
+    ...mapMutations("user", ["increment"]),
+
     toBack() {},
     resSend() {
       //请求

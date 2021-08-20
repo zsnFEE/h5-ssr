@@ -1,27 +1,37 @@
-import * as types from "../mutation-types";
+// import * as types from "../mutation-types";
+
+// export default {
+//   namespaced: true,
+//   state: {
+//     userInfo: {}
+//   },
+//   getters: {},
+//   actions: {
+//     //设置用户信息
+//     setUserInfo({ commit }, opts) {
+//       commit(types.SET_URSER_INFO, opts);
+//     }
+//   },
+//   mutations: {
+//     [types.SET_URSER_INFO](state, data) {
+//       state.userInfo = data;
+//     }
+//   }
+// };
+const actions = {};
+const getters = {};
 export default {
-  namespaced: true,
-  state: {
-    userInfo: {}
-  },
-  getters: {},
-  actions: {
-    // async getLoginInfoFun({ commit }, opts) {
-    // const res = await login(opts);
-    // if (!res.code) {
-    //   commit(types.GET_USER_INFO, res.data);
-    // } else {
-    //   commit(types.GET_USER_INFO, res);
-    // }
-    // },
-    //设置用户信息
-    setUserInfo({ commit }, opts) {
-      commit(types.SET_URSER_INFO, opts);
-    }
-  },
-  mutations: {
-    [types.SET_URSER_INFO](state, data) {
-      state.userInfo = data;
-    }
+  namespace: true,
+  state,
+  mutations,
+  actions,
+  getters
+};
+export const state = () => ({
+  userInfo: {}
+});
+export const mutations = {
+  increment(state, data) {
+    state.userInfo = data;
   }
 };
